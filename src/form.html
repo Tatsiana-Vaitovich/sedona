@@ -5,8 +5,9 @@
     <title>Sedona-form</title>
     <meta name="viewport" content="width=device-width">
   </head>
-  
+
   <body>
+
     <header class="main-header">
       <h1 class="visually-hidden">City of Sedona</h1>
       <div class="logo main-header__logo">
@@ -32,7 +33,7 @@
         <img src="https://placeholder.com/280x213.svg" alt="Welcome to Sedona" width="" height="">
       </div>
     </header>
-    
+
     <section class="comment">
       <div class="info comment__caption">
         <h2 class="info__caption">Оставьте свой отзыв</h2>
@@ -56,8 +57,8 @@
         <fieldset class="card-form card-form--contact comment__card">
           <legend class="card-form__caption">Контактная информация:</legend>
           <label class="cell required card-form__label">
-              Контактный телефон:
-              <input type="tel" name="tel" placeholder="Введите телефон" required>
+            Контактный телефон:
+            <input type="tel" name="tel" placeholder="Введите телефон" required>
           </label>
           <label class="cell required card-form__label">
             Электронная почта:
@@ -129,6 +130,22 @@
         <a href="#" class="copyright__link">HTML Academy</a>
       </section>
     </footer>
+
+    <section class="modal modal-failure">
+      <div class="info modal-failure__caption">
+        <h2 class="info__caption">Что-то пошло не так!</h2>
+        <p class="info__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+      </div>
+      <button type="button" class="btn modal-failure__btn">Ок</button>
+    </section>
+    <section class="modal modal-success">
+      <div class="info modal-success__caption">
+        <h2 class="info__caption">Ваш отзыв отправлен!</h2>
+        <p class="info__text">Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте</p>
+      </div>
+      <button type="button" class="btn modal-failure__btn">Закрыть окно</button>
+    </section>
+
   </body>
 
 </html>
