@@ -8,10 +8,10 @@
   
   <body>
     <header class="main-header">
+      <h1 class="logo__caption visually-hidden">City of Sedona</h1>
       <div class="logo main-header__logo">
-        <h1 lang="en" class="logo__caption visually-hidden">City of Sedona</h1>
         <a href="index.html" target="_blank" class="logo__link">
-          <img url="" alt="Седона-логотип" width="" height="" class="logo__img">
+          <img src="https://placeholder.com/102x83" alt="Седона-логотип" width="" height="" class="logo__img">
         </a>
       </div>
       <nav class="main-navigation main-header__navigation">
@@ -30,71 +30,115 @@
           </li>
         </ul>
       </nav>
-      <img src="" alt="Седона" width="" height="" class="main-header__img">
+      <div class="main-header__img">
+        <img src="https://placeholder.com/280x213.svg" alt="Welcome to Sedona" width="" height="">
+      </div>
     </header>
 
+    <div class="info">
+      <h2 class="info-caption">Фото и видео</h2>
+      <p class="info-text">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.</p>
+    </div>
     <section class="photos">
-      <h2 class="visually-hidden">Фото</h2>
-      <b class="photos__caption info-caption">Фото и видео</b>
-      <p class="photos__info info">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике.</p>
-      <article class="photos__photo photo">
-        <img src="" width="" height="" alt="" class="photo__img">
-        <h3 class="photo__caption">Неродные просторы</h3>
-        <p class="photo__autor">Автор фото: Борис</p>
-        <button class="likebtn photo__btn">
-        </button>
-      </article>
-      <article class="photos__photo photo">
-        <img src="" width="" height="" alt="" class="photo__img">
-        <h3 class="photo__caption">Местная растительность</h3>
-        <p class="photo__autor">Автор фото: Сергей</p>
-        <button class="likebtn photo__btn">
-        </button>
-      </article>
-      <article class="photos__photo photo">
-        <img src="" width="" height="" alt="" class="photo__img">
-        <h3 class="photo__caption">Дорога на север</h3>
-        <p class="photo__autor">Автор фото: Петр</p>
-        <button class="likebtn photo__btn">
-        </button>
-      </article>
-      <article class="photos__photo photo">
-        <img src="" width="" height="" alt="" class="photo__img">
-        <h3 class="photo__caption">Мост Дьявола</h3>
-        <p class="photo__autor">Автор фото: Антон</p>
-        <button class="likebtn photo__btn">
-        </button>
-      </article>
+      <h3 class="visually-hidden">Фото</h3>
+      <ul class="photos__list">
+        <li class="photos__item">
+          <article class="card-photo">
+            <div class="card-photo__img">
+              <img src="https://placeholder.com/280x280" width="" height="" alt="Неродные просторы">
+            </div>
+            <div class="card-photo__text">
+              <h3 class="card-photo__text--caption">Неродные просторы</h3>
+              <p class="card-photo__text--autor">Автор фото: Борис</p>
+            </div>
+            <button class="likebtn card-photo__btn"><span class="visually-hidden">Мне нравится!</span></button>
+          </article>
+        </li>
+        <li class="photos__item">
+          <article class="card-photo">
+            <div class="card-photo__img">
+              <img src="https://placeholder.com/280x280" width="" height="" alt="Местная растительность">
+            </div>
+            <div class="card-photo__text">
+              <h3 class="card-photo__text--caption">Местная растительность</h3>
+              <p class="card-photo__text--autor">Автор фото: Сергей</p>
+            </div>
+            <button class="likebtn card-photo__btn"><span class="visually-hidden">Мне нравится!</span></button>
+          </article>
+        </li>
+        <li class="photos__item">
+          <article class="card-photo">
+            <div class="card-photo__img">
+              <img src="https://placeholder.com/280x280" width="" height="" alt="Дорога на север">
+            </div>
+            <div class="card-photo__text">
+              <h3 class="card-photo--caption">Дорога на север</h3>
+              <p class="card-photo--autor">Автор фото: Петр</p>
+            </div>
+            <button class="likebtn card-photo__btn"><span class="visually-hidden">Мне нравится!</span></button>
+          </article>
+        </li>
+        <li class="photos__item">
+          <article class="card-photo">
+            <div class="card-photo__img">
+              <img src="https://placeholder.com/280x280" width="" height="" alt="Мост Дьявола">
+            </div>
+            <div class="card-photo__text">
+              <h3 class="card-photo--caption">Мост Дьявола</h3>
+              <p class="card-photo--autor">Автор фото: Антон</p>
+            </div>
+            <button class="likebtn card-photo__btn"><span class="visually-hidden">Мне нравится!</span></button>
+          </article>
+        </li>
+      </ul>
     </section>
     <section class="videos">
-      <h2 class="visually-hidden">Видео</h2>
-      <b class="videos__caption info-caption">Всё ещё сомневаетесь?</b>
-      <p class="videos__info info">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
-      <video src="" controls poster="">
-        <source src=".ogg" type="video/ogg">
-        <source src=".mp4" type="video/mp4">
-        <p>Пожалуйста, <a href=".mp4" download>скачайте</a>это видео</p>
-      </video>
+      <h3 class="visually-hidden">Видео</h3>
+      <div class="info videos__caption">
+        <b class="info__caption">Всё ещё сомневаетесь?</b>
+        <p class="info__text">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+      </div>
+      <div class="videos-video" width="" height="">
+        <video controls poster="https://placeholder.com/321x201" width="321" height="201">
+          <source src=".mp4" type="video/mp4">
+          <source src=".webm" type="video/webm">
+          <source src=".ogg" type="video/ogg">
+          <p>Пожалуйста, <a href=".mp4" download>скачайте</a>это видео</p>
+        </video>
+        <div class="videos__controls controls">
+          <div id="progress" class="controls__progress">
+            <span id="buffered" class="controls__progress--buffered"></span>
+            <span id="curent" class="controls__progress--curent"></span> <!--если <span id="buffered"><span id="current"></span></span>?-->
+          </div>
+          <div class="controls__buttons">
+            <span id="replay" class="controls__btn-play"><img src="https://placeholder.com/16x20" width="16" height="20" alt="Replay"></span> <!--нужет тут <span>?-->
+            <div class="controls__wrap">
+              <span id="subtitle" class="controls__btn-cc"><img src="https://placeholder.com/32x20" width="32" height="20" alt="CC"></span>
+              <span id="display" class="controls__btn-display"><img src="https://placeholder.com/20x20" width="20" height="20" alt="Display"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="main-footer">
       <section class="main-footer__visit">
-        <b class="info-caption">#visitsedona</b>
+        <b>#visitsedona</b>
       </section>
       <section class="networks main-footer__networks">
         <ul class="networks__list">
           <li class="networks__item">
-            <a href="#" class="networks__link" aria-label="twitter"></a>
+            <a href="#" class="networks__link"><span>Twitter</span></a>
           </li>
           <li class="networks__item">
-            <a href="#" class="networks__link" aria-label="facebook"></a>
+            <a href="#" class="networks__link"><span>Facebook</span></a>
           </li>
           <li class="networks__item">
-            <a href="#" class="networks__link " aria-label="youtube"></a>
+            <a href="#" class="networks__link"><span>YouTube</span></a>
           </li>
         </ul>
       </section>
-        <section class="copyright main-footer__copyright">
+      <section class="copyright main-footer__copyright">
         <p class="copyright__info info">Разработано</p>
         <a href="#" class="copyright__link">HTML Academy</a>
       </section>
