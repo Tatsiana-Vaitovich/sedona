@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width">
   </head>
 
-  <body>
+  <body class="container">
 
     <header class="main-header">
       <h1 class="visually-hidden">City of Sedona</h1>
-      <div class="logo main-header__logo">
-        <img src="https://placeholder.com/102x83" alt="Седона-логотип" width="" height="" class="logo__img--index">
-      </div>
+      <a class="logo main-header__logo">
+        <img src="http://placehold.it/102x83" alt="Седона-логотип" class="logo__img logo__img--index">
+      </a>
       <nav class="main-navigation main-header__navigation">
         <ul class="main-menu">
           <li class="main-menu__item">
-            <a class="main-menu__link main-menu__item--current">Главная</a>
+            <a class="main-menu__link main-menu__link--current">Главная</a>
           </li>
           <li class="main-menu__item">
             <a href="photo.html" target="_blank" class="main-menu__link">Фото и видео</a>
@@ -28,65 +28,78 @@
             <a href="" target="_blank" class="main-menu__link">HTML Academy</a>
           </li>
         </ul>
-        <button type="button class="main-navigation__btn">
+        <button type="button" class="main-navigation__btn">
           <span class="visually-hidden">Закрыть меню</span>
         </button>
       </nav>
       <div class="main-header__img">
-        <img src="https://placeholder.com/280x213.svg" alt="Welcome to Sedona" width="" height="">
+        <img src="http://placehold.it/280x213" alt="Welcome to Sedona">
       </div>
     </header>
 
     <section class="attraction">
       <div class="info attraction__caption">
-      <h2 class="info__caption">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
-      <p class="info__text">Рассмотрим 5 причин, по которым Седона круче, чем Гранд-Каньон!</p>
+        <h2 class="info__caption">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
+        <p class="info__text">Рассмотрим 5 причин, по которым Седона круче, чем Гранд-Каньон!</p>
       </div>
       <ol class="attraction__list">
         <li class="attraction__item ">
           <div class="card">
-            <h3 class="card__caption">Настоящий городок</h3>
-            <p class="card__text">Седона не аттракцион для туристов, там течет своя жизнь</p>
-          </div>
-          <div class="attraction__img--wrap">
-            <img src="https://placeholder.com/520x260.jpg" alt="Городок Седона" width="" height="" class="attraction__img">
-          </div>
+            <p class="description description--blue card__description">
+              <h3 class="description__caption">Настоящий городок</h3>
+              <p class="description__text">Седона не аттракцион для туристов, там течет своя жизнь</p>
+            </p>
+            <p class="card__img">
+              <img src="http://placehold.it/320x260" alt="Городок Седона">
+            </p>
         </li>
-        <li class="attraction__item">
-          <div class="card card--blue">
-            <h3 class="card__caption">Там есть мост дьявола</h3>
-            <p class="card__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
-          </div>
-          <div class="attraction__img--wrap">
-            <img src="https://placeholder.com/520x260.jpg" alt="Мост дьявола" width="" height="" class="attraction__img">
-          </div>
+        <li class="card attraction__item">
+          <p class="description descriprion--blue card__description">
+            <h3 class="description__caption">Там есть мост дьявола</h3>
+            <p class="description__text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+          </p>
+          <p class="card__img">
+            <img src="http://placehold.it/320x260" alt="Мост дьявола">
+          </p>
         </li>
-        <li class="card card--grey attraction__item">
-          <h3 class="card__caption">Небольшая площадь</h3>
-          <p class="card__text">Все интересные места находятся очень близко</p>
+        <li class="card attraction__item">
+          <p class="description card__description">
+            <h3 class="description__caption">Небольшая площадь</h3>
+            <p class="description__text">Все интересные места находятся очень близко</p>
+          </p>
         </li>
-        <li class="card card--grey attraction__item">
-          <h3 class="card__caption">Красивая дорога</h3>
-          <p class="card__text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+        <li class="card attraction__item">
+          <p class="description card__description">
+            <h3 class="description__caption">Красивая дорога</h3>
+            <p class="description__text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          </p>
         </li>
-        <li class="card card--grey attraction__item">
-          <h3 class="card__caption">Мало туристов</h3>
-          <p class="card__text">Большинство едет в гранд каньон и толпится там</p>
+        <li class="card attraction__item">
+          <p class="description card__description">
+            <h3 class="description__caption">Мало туристов</h3>
+            <p class="description__text">Большинство едет в гранд каньон и толпится там</p>
+          </p>
         </li>
-        <li class="information item attraction__item" style="list-style-type: none;">
+        <li class="information attraction__item" style="list-style-type: none;">
           <h3 class="information__caption visually-hidden">Разное</h3>
           <ul class="information__list">
             <li class="card information__item">
-              <b class="card__caption">Жильё</b>
-              <p class="card__text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+              <p class="description card__description">
+                <h4 class="description__caption">Жильё</h4>
+                <p class="description__text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+              </p>
             </li>
             <li class="card information__item">
-              <b class="card__caption">Сувениры</b>
-              <p class="card__text">Не только китайского, но и местного производства!</p>
+              <p class="description card__description">
+                <h4 class="description__caption">Сувениры</h4>
+                <p class="description__text">Не только китайского, но и местного производства!</p>
+              </p>
             </li>
             <li class="card information__item">
-              <b class="card__caption">Еда</b>
-              <p class="card__text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              <p class="description card__description">
+                <h4 class="description__caption">Еда</h4>
+                <p class="description__text">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              </p>
             </li>
           </ul>
         </li>
@@ -94,16 +107,16 @@
     </section>
 
     <section class="hotel-offer">
-      <h2 class="hotel__caption visually-hidden">Найти гостиницу</h2>
-      <div class="info hotel-offer__info">
-        <b class="info__caption">Заинтересовались?</b>
-        <p class="info__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      <h2 class="hotel-offer__caption visually-hidden">Найти гостиницу</h2>
+      <div class="info-width-button hotel-offer__info">
+        <b class="info-width-button__caption">Заинтересовались?</b>
+        <p class="info-width-button__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
       </div>
-      <a href="" class="hotel-offer__link">Найти гостиницу</a>
+      <a href="#" class="btn hotel-offer__link">Найти гостиницу</a>
     </section>
 
     <section class="map">
-      <img src="https://placeholder.com/320x350" width="" height="" alt="Седона, штат Аризона, США">
+      <img src="http://placehold.it/320x350" alt="Седона, штат Аризона, США">
     </section>
 
     <footer class="main-footer">

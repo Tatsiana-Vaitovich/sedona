@@ -10,9 +10,9 @@
 
     <header class="main-header">
       <h1 class="visually-hidden">City of Sedona</h1>
-      <div class="logo main-header__logo">
-        <img src="https://placeholder.com/102x83" alt="Седона-логотип" width="" height="" class="logo__img">
-      </div>
+      <a href="index.html" target="_blank"" class="logo main-header__logo">
+        <img src="http://placehold.it/102x83" alt="Седона-логотип" class="logo__img">
+      </a>
       <nav class="main-navigation main-header__navigation">
         <ul class="main-menu">
           <li class="main-menu__item">
@@ -21,29 +21,29 @@
           <li class="main-menu__item">
             <a href="photo.html" target="_blank" class="main-menu__link">Фото и видео</a>
           </li>
-          <li class="main-menu__item main-menu__item--current">
-            <a class="main-menu__link">Форма отзыва</a>
+          <li class="main-menu__item">
+            <a class="main-menu__link main-menu__link--current">Форма отзыва</a>
           </li>
           <li class="main-menu__item">
             <a href="" target="_blank" class="main-menu__link">HTML Academy</a>
           </li>
         </ul>
-        <button type="button class="main-navigation__btn">
+        <button type="button" class="main-navigation__btn">
           <span class="visually-hidden">Закрыть меню</span>
         </button>
       </nav>
       <div class="main-header__img">
-        <img src="https://placeholder.com/280x213.svg" alt="Welcome to Sedona" width="" height="">
+        <img src="http://placehold.it/280x213" alt="Welcome to Sedona">
       </div>
     </header>
 
-    <section class="comment container">
+    <section class="comment">
       <div class="info comment__caption">
         <h2 class="info__caption">Оставьте свой отзыв</h2>
         <p class="info__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
       </div>
       <form action="http://echo.htmlacademy.ru" method="POST" class="comment__form">
-        <fieldset class="card-form card-form--name comment__card">
+        <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Представьтесь:</legend>
           <label class="cell required card-form__label">
             Имя:
@@ -57,7 +57,7 @@
             Отчество:
             <input type="text" name="patronymic" placeholder="Александрович" class="cell__form"></label>
         </fieldset>
-        <fieldset class="card-form card-form--contact comment__card">
+        <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Контактная информация:</legend>
           <label class="cell required card-form__label">
             Контактный телефон:
@@ -68,7 +68,7 @@
             <input type="email" name="e-mail" placeholder="Введите e-mail" required class="cell__form">
           </label>
         </fieldset>
-        <fieldset class="card-form card-form--radio comment__card">
+        <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Ваше общее впечатление:</legend>
           <label class="cell card-form__label">
             <input type="radio" name="review" value="positive" checked class="cell__form">
@@ -83,32 +83,35 @@
             Затрудняюсь ответить
           </label>
         </fieldset>
-        <fieldset class="card-form card-form--checkbox comment__card">
+        <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Посещенные достопримечательности:</legend>
           <label class="cell card-form __label">
-            <input type="checkbox" name="bridge" checked class="cell__form">
+            <input type="checkbox" name="visit" value="bridge" checked class="cell__form">
             Мост Дьявола
           </label>
           <label class="card-form__label cell">
-            <input type="checkbox" name="mountain" checked class="cell__form">
+            <input type="checkbox" name="visit" value="mountain" checked class="cell__form">
             Гора-Колокол
           </label>
           <label  class="card-form__label cell">
-            <input type="checkbox" name="park" checked class="cell__form">
+            <input type="checkbox" name="visit" value="park" checked class="cell__form">
             Слайд-парк
           </label>
           <label  class="card-form__label cell">
-            <input type="checkbox" name="rocks" class="cell__form">
+            <input type="checkbox" name="visit" value="rocks" class="cell__form">
             Красные скалы
           </label>
         </fieldset>
-        <fieldset class="card-form card-form--textarea">
+        <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Опишите свои эмоции:</legend>
-          <textarea name="comment" placeholder="Опишите подробно все свои восторги"></textarea>
+          <label class="visually-hidden">
+            Опишите подробно свои восторги
+            <textarea name="comment" placeholder="Опишите подробно все свои восторги"></textarea>
+          </label>
         </fieldset>
         <button type="submit" class="btn comment__btn">Отправить отзыв</button>
+        <p class="comment__info">* - Обязательные поля</p>
       </form>
-      <p class="comment__info">* - Обязательные поля</p>
     </section>
 
     <footer class="main-footer container">
@@ -134,19 +137,21 @@
       </section>
     </footer>
 
-    <section class="modal modal-failure">
-      <div class="info modal-failure__caption">
-        <h2 class="info__caption">Что-то пошло не так!</h2>
-        <p class="info__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+    <section class="modal">
+      <div class="info-width-button modal__caption">
+        <h2 class="info-width-button__caption">Что-то пошло не так!</h2>
+        <p class="info-width-button__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+        <button type="button" class="btn info-width-button__btn info-width-button__btn--narrow">Ок</button>
       </div>
-      <button type="button" class="btn modal-failure__btn">Ок</button>
     </section>
-    <section class="modal modal-success">
-      <div class="info modal-success__caption">
-        <h2 class="info__caption">Ваш отзыв отправлен!</h2>
-        <p class="info__text">Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте</p>
+    <section class="modal modal--success">
+      <div class="info-width-button">
+        <h2 class="info-width-button__caption">Ваш отзыв отправлен!</h2>
+        <p class="info-width-button__text">Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте</p>
+        <div class="info-width-button__btn">
+          <button type="button" class="btn">Закрыть окно</button>
+        </div>
       </div>
-      <button type="button" class="btn modal-failure__btn">Закрыть окно</button>
     </section>
 
   </body>
