@@ -9,5 +9,5 @@
 *.sublime*
 node_modules/
 npm-debug.*
-src/css/*.css
+source/css/*.css
 Thumbs.db
