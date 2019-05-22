@@ -5,16 +5,33 @@
 .attraction__list {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 320px;
   list-style: none;
 }
 
-.attraction__item:first-child {
+.attraction__item:nth-child(1) {
   order: 1;
 }
 
-.attraction__item:last-child {
+.attraction__item:nth-child(2) {
+  order: 3;
+}
+
+.attraction__item:nth-child(3) {
+  order: 4;
+}
+
+.attraction__item:nth-child(4) {
+  order: 5;
+}
+
+.attraction__item:nth-child(5) {
+  order: 6;
+}
+
+.attraction__item:nth-child(6) {
   order: 2;
 }
 
@@ -22,8 +39,13 @@
   .attraction__list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 768px;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .attraction__list {
+    width: 1200px;
+  }
 }
