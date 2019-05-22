@@ -1,0 +1,27 @@
+.information__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+.information__item {
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .information__list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .information__item {
+    padding-left: 0;
+  }
+}
