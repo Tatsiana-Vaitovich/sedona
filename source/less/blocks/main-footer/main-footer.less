@@ -3,16 +3,40 @@
   flex-direction: column;
   width: 320px;
   margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .main-footer__visit {
   .font-caption;
-  margin: 40px 0 0 0;
+  display: block;
+  margin-bottom: 0;
   font-size: @font-size-caption--big;
 }
 
-.main-footer__networks {
-  margin-top: 40px;
+  .main-footer__networks,
+  .main-footer__copyright {
+    margin: 40px 0 0 0;
+  }
+
+@media screen and (min-width: 768px) {
+  .main-footer {
+    width: 768px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .main-footer__visit,
+  .main-footer__networks,
+  .main-footer__copyright {
+    margin-top: 0;
+    }
 }
 
+@media screen and (min-width: 1200px) {
+  .main-footer {
+    width: 1200px;
+  }
+}
