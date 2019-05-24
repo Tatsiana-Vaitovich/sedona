@@ -1,22 +1,77 @@
 .main-menu {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 23px;
+    height: 22px;
+    background-image: url("../img/icon-cross.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+
+.main-menu__item {
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+  text-align: center;
+}
+
+.main-menu__item:first-child {
+  border-top: none;
+}
+
+.main-menu__item:last-child {
+  border-bottom: none;
 }
 
 .main-menu__link {
-
+  display: block;
+  padding: 20px;
+  font-family: "ptsansbold";
+  font-size: @font-size-caption;
+  line-height: 2.22em;
+  text-transform: uppercase;
+  color: @font-color-light;
+  background-color: @bc-blue;
 }
 
-
+.main-menu__btn {
+  position: absolute;
+  right: 20px;
+  bottom: -48px;
+  display: block;
+  width: 23px;
+  height: 21px;
+  padding: 0;
+  border: none;
+  background-image: url(../img/icon-menu.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  z-index: 1;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
 
 @media screen and (min-width: 768px) {
   .main-menu {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    &::before {
+    display: none;
+    }
   }
 
   .main-menu__item {
@@ -24,25 +79,43 @@
     padding-right: 25px;
     padding-bottom: 20px;
     padding-left: 25px;
-
+    border: none;
   }
-  .main-menu__item:nth-child(2),
+
   .main-menu__item:nth-child(3) {
     flex-grow: 1;
+    margin-left: 51px;
+    text-align: right;
   }
 
-  .main-menu__item:nth-child(3) {
-    text-align: right;
+  .main-menu__item:nth-child(2) {
+    flex-grow: 2;
+    margin-right: 51px;
+    text-align: left;
   }
 
   .main-menu__link {
     .font-text;
     font-family: "ptsansbold";
     font-weight: bold;
+    color: @font-color-caption;
+    background-color: transparent;
   }
 
   .main-menu__btn {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-menu__item {
+    flex-grow: 0;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .main-menu__item:nth-child(2) {
+    margin-right: 420px;
   }
 
 }

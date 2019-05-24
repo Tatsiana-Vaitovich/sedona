@@ -14,6 +14,7 @@
 }
 
 .main-header__navigation {
+  position: relative;
   width: 320px;
   margin: 0 auto;
 }
@@ -49,9 +50,6 @@
 }
 
 @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .main-header__navigation--mobile {
-    display: none;
-  }
   .main-header__img-wrapper {
     background-image: url("../img/bg-back-mobile@2x.jpg");
   }
@@ -60,6 +58,14 @@
 @media screen and (min-width: 768px) {
   .main-header__navigation {
     width: 768px;
+  }
+
+  .main-header__navigation--mobile {
+    display: none;
+  }
+
+  .main-header__navigation--desktop {
+    display: flex;
   }
 
   .main-header__img-wrapper {
