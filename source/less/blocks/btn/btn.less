@@ -12,6 +12,16 @@
   text-transform: uppercase; 
   color: @font-color-light;
   background-color: @bc-blue;
+  &:hover {
+    background-color: @bc-blue--hover;
+  }
+  &:active {
+    background-color: @bc-blue--active;
+    color: fade(@font-color-light, 30%);
+  }
+  &:disabled {
+    background-color: @bc--desabled;
+  }
 }
 
 @media screen and (min-width: 768px) {
