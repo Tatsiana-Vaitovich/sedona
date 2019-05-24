@@ -46,24 +46,6 @@
   background-color: @bc-blue;
 }
 
-.main-menu__btn {
-  position: absolute;
-  right: 20px;
-  bottom: -48px;
-  display: block;
-  width: 23px;
-  height: 21px;
-  padding: 0;
-  border: none;
-  background-image: url(../img/icon-menu.svg);
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: contain;
-  z-index: 1;
-  transform: translate(0, -50%);
-  cursor: pointer;
-}
-
 @media screen and (min-width: 768px) {
   .main-menu {
     flex-direction: row;
@@ -101,10 +83,6 @@
     color: @font-color-caption;
     background-color: transparent;
   }
-
-  .main-menu__btn {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -117,5 +95,4 @@
   .main-menu__item:nth-child(2) {
     margin-right: 420px;
   }
-
 }
