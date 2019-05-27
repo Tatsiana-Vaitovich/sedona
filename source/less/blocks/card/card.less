@@ -62,14 +62,14 @@
 .card__img-wrapper {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 320px;
   height: 280px;
   line-height: 0;
+  overflow: hidden;
 }
 
 .card__img {
   width: 100%;
-  height: 280px;
 }
 
 @media screen and (min-width: 768px) {
@@ -80,17 +80,15 @@
 
   .card--with-img {
     flex-direction: row;
-    overflow: hidden;
     width: 768px;
-    height: 256px;
+    background-color: @bc-blue;
+  }
+
+  .card--with-img-reverse {
+    flex-direction: row-reverse;
   }
 
   .card__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    flex-shrink: 0;
     width: 256px;
     padding-top: 40px;
     padding-right: 45px;
@@ -119,7 +117,7 @@
   }
 
   .card__img-wrapper {
-    flex-grow: 0;
+    width: 512px;
   }
 }
 
