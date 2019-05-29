@@ -5,6 +5,17 @@
     <title>Sedona</title>
     <link href="css/style.css" rel="stylesheet" title="style">
     <meta name="viewport" content="width=device-width">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=<766bd110-597f-4dab-88e2-df7c62ba4e4a>&lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      ymaps.ready(init);    
+      function init(){ 
+          var myMap = new ymaps.Map("map", {
+              center: [34.84722526, -111.76592495],
+              zoom: 9
+          }); 
+      }
+  </script>
   </head>
 
   <body class="container">
@@ -146,9 +157,7 @@
       </div>
     </section>
 
-    <section class="map">
-      <img src="http://placehold.it/320x350" alt="Седона, штат Аризона, США" class="map__img">
-    </section>
+    <section id="map" class="map"></section>
 
     <footer class="main-footer">
       <b class="main-footer__visit">#visitsedona</b>
