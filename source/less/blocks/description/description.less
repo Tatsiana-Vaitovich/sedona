@@ -9,18 +9,16 @@
 }
 
 .description__caption--information {
-  position: relative;
+  display: flex;
+  align-items: center;
   text-align: left;
   &::before {
     content: "";
-    position: absolute;
-    top: 50%;
-    left: -30px;
     display: block;
     height: 37px;
+    margin-right: 10px;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: translate(-50%, -50%);
   }
 }
 .description__caption--information-house {
@@ -81,6 +79,7 @@
 }
 
 .description__text--information {
+  margin-left: 50px;
   text-align: left;
   &::before {
     display: none;
@@ -102,14 +101,12 @@
   }
 
   .description__caption--information {
+    flex-direction: column;
     text-align: center;
+    margin-bottom: 30px;
     &::before {
-      position: relative;
-      top: 0px;
-      left: 0px;
       height: 75px;
       margin: 0 auto 30px auto;
-      transform: none;
     }
   }
 
@@ -133,5 +130,9 @@
 
   .description__text {
     text-align: center;
+  }
+
+  .description__text--information {
+    margin-left: 0;
   }
 }
