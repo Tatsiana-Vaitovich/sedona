@@ -3,8 +3,18 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Sedona</title>
-    <link href="css/style.css" rel="stylesheet" title="style">
+    <link href="css/style.min.css" rel="stylesheet" title="style">
     <meta name="viewport" content="width=device-width">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=766bd110-597f-4dab-88e2-df7c62ba4e4a&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+      ymaps.ready(init);
+      function init(){ 
+          var myMap = new ymaps.Map("map", {
+              center: [34.84722526, -111.76592495],
+              zoom: 9
+          }); 
+      }
+    </script>
   </head>
 
   <body class="container">
@@ -138,10 +148,11 @@
                   <h4 class="description__caption description__caption--information description__caption--information-gift">Сувениры</h4>
                   <p class="description__text description__text--information">Не только китайского, но и местного производства!</p>
                 </div>
+              </div>
             </li>
             <li class="information__item">
               <div class="card">
-                <div class="card__description card__description--information description">
+                <div class="card__description card__description--information card__description--information-last description">
                   <h4 class="description__caption description__caption--information description__caption--information-food">Еда</h4>
                   <p class="description__text description__text--information">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
                 </div>
@@ -157,13 +168,11 @@
       <div class="postamble hotel-offer__info">
         <b class="postamble__caption">Заинтересовались?</b>
         <p class="postamble__text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#" class="postamble__btn btn">Найти гостиницу</a>
+        <a href="#" class="postamble__btn btn">Найти гостиницу</a>
       </div>
     </section>
 
-    <section class="map">
-      <img src="http://placehold.it/320x350" alt="Седона, штат Аризона, США" class="map__img">
-    </section>
+    <section id="map" class="map"></section>
 
     <footer class="main-footer">
       <b class="main-footer__visit">#visitsedona</b>
