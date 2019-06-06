@@ -12,11 +12,11 @@
     <header class="main-header">
       <h1 class="visually-hidden">City of Sedona</h1>
       <div class="main-header__wrapper">
-        <a href="index.html" target="_blank" class="logo main-header__logo">
-          <picture>
+        <a href="index.html" class="logo main-header__logo">
+          <picture class="logo__picture">
             <source media="(min-width: 1200px)" srcset="img/logo-sedona-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/logo-sedona-tablet.svg">
-            <img src="img/logo-sedona-mobile.svg" max-width="187" max-height="96" alt="Седона-логотип" class="logo__img">
+            <img src="img/logo-sedona-mobile.svg" width="102" max-height="83" alt="Седона-логотип" class="logo__img">
           </picture>
         </a>
         <nav class="main-header__navigation">
@@ -25,23 +25,25 @@
               <a href="index.html" class="main-menu__link">Главная</a>
             </li>
             <li class="main-menu__item">
-              <a href="photo.html" target="_blank" class="main-menu__link">Фото и видео</a>
+              <a href="photo.html" class="main-menu__link">Фото и видео</a>
             </li>
             <li class="main-menu__item">
               <a class="main-menu__link main-menu__link--current">Форма отзыва</a>
             </li>
             <li class="main-menu__item">
-              <a href="https://htmlacademy.ru" target="_blank" class="main-menu__link">HTML Academy</a>
+              <a href="https://htmlacademy.ru" class="main-menu__link">HTML Academy</a>
             </li>
           </ul>
-          <button type="button" class="main-navigation__btn">
-            <span class="visually-hidden">Закрыть меню</span>
-          </button>
+          <div class="main-header__btn-wrapper">
+            <button type="button" class="main-header__btn">
+              <span class="visually-hidden">Закрыть меню</span>
+            </button>
+          </div>
         </nav>
       </div>
-      <div class="main-header__img-wrapper">
-        <img src="img/text-sedona.svg"  width="229" height="39" alt="Welcome to Sedona" class="main-header__img">
-      </div>
+      <p class="main-header__img-wrapper">
+        <img src="img/text-sedona.svg" width="229" height="39" alt="Welcome to Sedona" class="main-header__img">
+      </p>
     </header>
 
     <section class="comment">
@@ -122,25 +124,25 @@
     </section>
 
     <footer class="main-footer">
-      <section class="main-footer__visit">
-        <b>#visitsedona</b>
-      </section>
+      <b class="main-footer__visit">#visitsedona</b>
       <section class="networks main-footer__networks">
         <ul class="networks__list">
-          <li class="networks__item">
-            <a href="#" class="networks__link"><span>Twitter</span></a>
+          <li class="networks__item networks__item--twitter">
+            <a href="#" class="networks__link"><span class="visually-hidden">Twitter</span></a>
           </li>
-          <li class="networks__item">
-            <a href="#" class="networks__link">Facebook</a>
+          <li class="networks__item networks__item--facebook">
+            <a href="#" class="networks__link"><span class="visually-hidden">Facebook</span></a>
           </li>
-          <li class="networks__item">
-            <a href="#" class="networks__link">YouTube</a>
+          <li class="networks__item networks__item--youtube">
+            <a href="#" class="networks__link "><span class="visually-hidden">YouTube</span></a>
           </li>
         </ul>
       </section>
       <section class="copyright main-footer__copyright">
         <p class="copyright__info">Разработано</p>
-        <a href="#" class="copyright__link">HTML Academy</a>
+        <a href="https://htmlacademy.ru" aria-label="Переход на сайт HTML Academy" class="copyright__link">
+          <svg role="img" width="27" height="34" class="copyright__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><path d="M30.2 5h-.2l-19.7 2.1v36.2l19.7 11.7 19.7-11.7v-36.2l-19.5-2.1zm17 36.8l-17.2 10.2-17.2-10.2v-14.8l17.1 10.2v1.8l-11.7-7v1.8l11.8 7.1v1.9l-11.8-7v1.8l11.8 7 11.9-7.1v-7.6l5.3-3.2v15.1zm-.1-17l-4.7 2.8-2.2 1.3-10.3-6.1v1.8l8.8 5.3h-.1l-.2.1-1.3.7-7.3-4.3v1.8l5.8 3.4-1.4.9-4.3-2.6v1.8l2.9 1.7-2.9 1.7-17-10.1 17-10.2 17.2 10zm.1-1.8l-17.3-10.2-17.1 10.2v-13.6l17.2-1.8 17.2 1.8v13.6z"/></svg>
+        </a>
       </section>
     </footer>
 
@@ -155,8 +157,8 @@
       <div class="postamble">
         <h2 class="postamble__caption">Ваш отзыв отправлен!</h2>
         <p class="postamble__text">Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте</p>
-        <div class="postamble__btn">
-          <button type="button" class="btn">Закрыть окно</button>
+        <div class="postamble__btn-wrapper">
+          <button type="button" class="btn postamble__btn">Закрыть окно</button>
         </div>
       </div>
     </section>
