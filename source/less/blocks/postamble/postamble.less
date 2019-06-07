@@ -1,6 +1,4 @@
 .postamble {
-  width: 320px;
-  margin: 0 auto;
   padding-top: 40px;
   padding-right: 20px;
   padding-bottom: 50px;
@@ -21,11 +19,12 @@
 
 .postamble__btn {
   margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @tablet) {
   .postamble {
-    width: 768px;
     padding-top: 50px;
     padding-bottom: 55px;
   }
@@ -42,9 +41,8 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: @desktop) {
   .postamble {
-    width: 1200px;
     padding-bottom: 70px;
   }
 }

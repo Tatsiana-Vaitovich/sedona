@@ -1,7 +1,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 320px;
   text-align: center;
 }
 
@@ -59,13 +58,12 @@
 }
 
 .card__description--information-last {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
   }
 
 .card__img-wrapper {
   margin: 0;
   padding: 0;
-  width: 320px;
   height: 256px;
   line-height: 0;
   overflow: hidden;
@@ -75,15 +73,15 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @tablet) {
   .card {
-    width: 256px;
+    width: @tablet/3;
     margin: 0;
   }
 
   .card--with-img {
     flex-direction: row;
-    width: 768px;
+    width: @tablet;
     background-color: @bc-blue;
   }
 
@@ -92,7 +90,7 @@
   }
 
   .card__description {
-    width: 256px;
+    width: @tablet/3;
     padding-top: 38px;
     padding-right: 45px;
     padding-bottom: 38px;
@@ -119,26 +117,26 @@
   }
 
   .card__img-wrapper {
-    width: 512px;
+    width: @tablet-@tablet/3;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: @desktop) {
   .card {
-    width: 400px;
+    width: @desktop/3;
   }
 
   .card--with-img {
-    width: 1200px;
+    width: @desktop;
   }
 
   .card__description {
-    width: 400px;
+    width: @desktop/3;
     padding-right: 55px;
     padding-left:55px;
   }
 
   .card__img-wrapper {
-    width: 800px;
+    width: @desktop-@desktop/3;
   }
 }

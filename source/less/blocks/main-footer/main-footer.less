@@ -1,8 +1,6 @@
 .main-footer {
   display: flex;
   flex-direction: column;
-  width: 320px;
-  margin: 0 auto;
   padding-top: 40px;
   padding-bottom: 20px;
   text-align: center;
@@ -21,9 +19,8 @@
     margin: 40px 0 0 0;
   }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @tablet) {
   .main-footer {
-    width: 768px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -33,11 +30,5 @@
   .main-footer__networks,
   .main-footer__copyright {
     margin-top: 0;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .main-footer {
-    width: 1200px;
   }
 }

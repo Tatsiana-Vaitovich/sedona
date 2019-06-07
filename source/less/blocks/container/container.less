@@ -1,12 +1,16 @@
 .container {
-  width: 100%;
-  min-width: 320px;
-  margin: 0;
+  width: @mobile;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: @tablet) {
   .container {
-    width: 1200px;
-    margin: 0 auto;
+    width: @tablet;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .container {
+    width: @desktop;
   }
 }

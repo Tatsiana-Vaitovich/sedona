@@ -5,9 +5,8 @@
 .attraction__list {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  width: 320px;
   list-style: none;
 }
 
@@ -35,17 +34,10 @@
   order: 2;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @tablet) {
   .attraction__list {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 768px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .attraction__list {
-    width: 1200px;
   }
 }

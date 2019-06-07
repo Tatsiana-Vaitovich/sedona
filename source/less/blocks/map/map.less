@@ -1,7 +1,5 @@
 .map {
-  width: 320px;
   height: 350px;
-  margin: 0 auto;
   background-image: url(../img/bg-map-mobile@1x.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -13,9 +11,8 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @tablet) {
   .map {
-    width: 768px;
     background-image: url(../img/bg-map-tablet@1x.jpg);
   }
 
@@ -26,9 +23,8 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: @desktop) {
   .map {
-    width: 1200px;
     background-image: url(../img/bg-map-desktop@1x.jpg);
   }
 
