@@ -13,9 +13,6 @@
   height: 48px;
   margin: 3px;
   background-color: @bc-blue;
-  background-repeat: no-repeat;
-  background-size: auto 40%;
-  background-position: center;
   &:hover {
     background-color: @bc-blue--hover;
   }
@@ -24,20 +21,27 @@
   }
 }
 
-.networks__item--twitter {
-  background-image: url("../img/icon-twitter.svg");
-}
-
-.networks__item--facebook {
-  background-image: url("../img/icon-facebook.svg");
-}
-
-.networks__item--youtube {
-  background-image: url("../img/icon-youtube.svg");
-}
-
 .networks__link {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.networks__img {
+  display: block;
+  &:active {
+    fill-opacity: 0.3;
+  }
+}
+
+.networks__img--twitter {
+  padding: 17px 15px;
+}
+
+.networks__img--facebook {
+  padding: 15px 19px;
+}
+
+.networks__img--youtube {
+  padding: 17px 13px;
 }
