@@ -83,6 +83,8 @@
 
   .main-menu__link {
     .font-text;
+    padding: 15px 0;
+    height: 55px;
     font-family: "ptsansbold";
     color: @font-color-caption;
     background-color: transparent;
@@ -97,5 +99,12 @@
 
   .main-menu__link--current {
     color: @font-color--current;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .main-menu__link {
+    height: auto;
+    padding: 0;
   }
 }
