@@ -29,6 +29,7 @@
 
   .card-photo__img {
     width: 100%;
+    height: 100%;
   }
 
   .card-photo--first,
@@ -39,12 +40,41 @@
   .card-photo__wrapper {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 30px 20px 20px;
+    background-color: @bc-grey;
   }
 
   .card-photo__description {
     width: 65%;
-    //background-color: @bc-grey;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .card-photo {
+    position: relative;
+    width: ((@desktop)-60px)/3;
   }
 
+  .card-photo__link {
+    width: ((@desktop)-60px)/3;
+  }
+
+  .card-photo--first,
+  .card-photo__link--first {
+    width: (@desktop)-60px;
+  }
+
+  .card-photo__link--first {
+    height: 400px;
+  }
+
+  .card-photo__wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+    background-color: fade(@bc-dark, 30%);
+  }
 }
