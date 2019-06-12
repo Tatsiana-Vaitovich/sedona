@@ -1,0 +1,34 @@
+.video__caption {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.video__controls {
+  margin-top: -45px;
+}
+
+@media screen and (min-width: @tablet) {
+  .video {
+    padding: 0 60px;
+  }
+
+  .video__wrapper {
+    position: relative;
+  }
+
+  .video__controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, 0);
+    background-color: fade(@bc-dark, 60%);
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .video {
+    padding-right: ((@desktop)-800px)/2;
+    padding-left: ((@desktop)-800px)/2;
+  }
+}

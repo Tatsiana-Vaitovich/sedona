@@ -1,0 +1,35 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.controls__progress {
+  height: 45px;
+  background-color: fade(@bc-dark, 60%);
+}
+
+.controls__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 33px 25px;
+  background-color: @bc-grey;
+}
+@media screen and (min-width: @tablet) {
+  .controls {
+    width: 100%;
+    min-height: 93px;
+    margin: 0;
+  }
+
+  .controls__progress {
+    background-color: transparent;
+  }
+
+  .controls__buttons {
+    background-color: transparent;
+  }
+}
