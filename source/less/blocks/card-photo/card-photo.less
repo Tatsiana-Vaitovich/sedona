@@ -7,9 +7,44 @@
   display: block;
   width: 280px;
   height: 280px;
-  margin-bottom: 25px;
+  overflow: hidden;
 }
 
-.card-photo__description {
-  margin-bottom: 15px;
+.card-photo__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: @tablet) {
+  .card-photo {
+    width: ((@tablet)-120px)/2;
+    padding: 0;
+  }
+
+  .card-photo__link {
+    width: ((@tablet)-120px)/2;
+    margin-bottom: 0;
+    height: 267px;
+  }
+
+  .card-photo__img {
+    width: 100%;
+  }
+
+  .card-photo--first,
+  .card-photo__link--first {
+    width: (@tablet)-120px;
+  }
+
+  .card-photo__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px 20px 20px;
+  }
+
+  .card-photo__description {
+    width: 65%;
+    //background-color: @bc-grey;
+  }
+
 }

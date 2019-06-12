@@ -14,3 +14,30 @@
   border-top: 1px solid @bc--desabled;
 }
 
+@media screen and (min-width: @tablet) {
+  .photos {
+    padding: 0 60px;
+  }
+
+  .photos__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .photos__list:last-child {
+    border-bottom: none;
+  }
+
+  .photos__item {
+    border-top: none;
+  }
+
+  .photos__item:nth-child(odd) {
+    background-color: @bc-grey;
+  }
+
+  .photos__item:nth-child(even) {
+    background-color: @bc-grey--dark;
+  }
+
+}
