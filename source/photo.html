@@ -178,21 +178,27 @@
           <p>Пожалуйста, <a href=".mp4" download>скачайте</a>это видео</p>
         </video>-->
         <div class="video__controls controls">
-          <div id="progress" class="controls__progress">
-            <span id="buffered" class="controls__progress controls__progress--buffered">
-              <span id="curent" class="controls__progress controls__progress--curent"></span>
+          <div id="progress" class="controls__volume progress">
+            <span id="buffered" class="progress__buffered">
+              <span id="curent" class="progress__curent"></span>
             </span>
           </div>
           <div class="controls__buttons">
-            <button type="button" id="replay" class="controls__btn-play">
-              <img src="img/icon-video-replay.svg" width="16" height="20" alt="Replay">
+            <button type="button" id="replay" class="controls__btn">
+              <svg width="16" height="20" class="controls__btn-img controls__btn-img--play">
+                <use xlink:href="img/sprite.svg#icon-video-replay"></use>
+              </svg>
             </button>
             <div class="controls__wrap">
-              <button type="button" id="subtitle" class="controls__btn-cc">
-                <img src="img/icon-video-subtitles.svg" width="32" height="20" alt="CC">
+              <button type="button" id="subtitle" class="controls__btn">
+                <svg width="32" height="20" class="controls__btn-img controls__btn-img--cc">
+                  <use xlink:href="img/sprite.svg#icon-video-subtitles"></use>
+                </svg>
               </button>
-              <button type="button" id="display" class="controls__btn-display">
-                <img src="img/icon-video-fullscreen.svg" width="20" height="20" alt="Display">
+              <button type="button" id="display" class="controls__btn">
+                  <svg width="20" height="20" class="controls__btn-img controls__btn-img--display">
+                    <use xlink:href="img/sprite.svg#icon-video-fullscreen"></use>
+                  </svg>
               </button>
             </div>
           </div>

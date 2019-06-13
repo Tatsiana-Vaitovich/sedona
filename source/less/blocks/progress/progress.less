@@ -1,0 +1,35 @@
+.progress {
+  height: 45px;
+}
+
+.progress__buffered {
+  position: relative;
+  display: block;
+  margin: 21px auto;
+  width: 235px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progress__curent {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translate(0, -50%);
+}
+
+@media screen and (min-width: @tablet) {
+  .progress__buffered {
+    width: 389px;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .progress__buffered {
+    width: 540px;
+  }
+}

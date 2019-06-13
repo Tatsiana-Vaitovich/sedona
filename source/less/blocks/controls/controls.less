@@ -4,8 +4,7 @@
   margin: 0 20px;
 }
 
-.controls__progress {
-  height: 45px;
+.controls__volume {
   background-color: fade(@bc-dark, 60%);
 }
 
@@ -18,18 +17,48 @@
   padding: 33px 25px;
   background-color: @bc-grey;
 }
+
+.controls__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
+
+.controls__btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.controls__btn-img {
+  fill: @bc-btn;
+}
+
 @media screen and (min-width: @tablet) {
   .controls {
+    position: relative;
     width: 100%;
     min-height: 93px;
     margin: 0;
+    background-color: fade(@bc-dark, 60%);
   }
 
-  .controls__progress {
+  .controls__volume {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    margin: 0;
+    transform: translateY(-50%);
     background-color: transparent;
   }
 
   .controls__buttons {
     background-color: transparent;
+  }
+
+  .controls__btn-img {
+    fill: @bc-btn--tablet;
   }
 }
