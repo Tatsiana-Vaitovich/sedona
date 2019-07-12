@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Sedona-form</title>
-    <link href="css/style.css" rel="stylesheet" title="style">
+    <link href="css/style.min.css" rel="stylesheet" title="style">
     <meta name="viewport" content="width=device-width">
   </head>
 
@@ -41,9 +41,9 @@
           </div>
         </nav>
       </div>
-      <p class="main-header__img-wrapper">
+      <div class="main-header__img-wrapper">
         <img src="img/text-sedona.svg" width="229" height="39" alt="Welcome to Sedona" class="main-header__img">
-      </p>
+      </div>
     </header>
 
     <section class="comment">
@@ -52,44 +52,67 @@
         <p class="intro__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
       </div>
       <form action="http://echo.htmlacademy.ru" method="POST" class="comment__form">
-        <fieldset class="card-form comment__card">
-          <legend class="card-form__caption">Представьтесь:</legend>
-          <label class="cell required card-form__label">
-            Имя:
-            <input type="text" name="name" placeholder="Петр" required="" class="cell__form">
-          </label>
-          <label class="cell required card-form__label">
-            Фамилия:
-            <input type="text" name="family" placeholder="Иванов" required="" class="cell__form">
-          </label>
-          <label class="cell card-form__label">
-            Отчество:
-            <input type="text" name="patronymic" placeholder="Александрович" class="cell__form"></label>
+        <fieldset class="card-form">
+          <legend class="card-form__caption">
+            Представьтесь:
+          </legend>
+          <ul role="none" class="card-form__list">
+            <li class="card-form__item">
+              <label class="required cell">
+                <span class="cell__name">Имя:</span>
+                <input type="text" name="name" placeholder="Петр" required="" class="cell__form">
+              </label>
+            </li>
+            <li class="card-form__item">
+              <label class="required cell">
+                <span class="cell__name">Фамилия:</span>
+                <input type="text" name="family" placeholder="Иванов" required="" class="cell__form">
+              </label>
+            </li>
+            <li class="card-form__item">
+              <label class="cell cell--last">
+                <span class="cell__name">Отчество:</span>
+                <input type="text" name="patronymic" placeholder="Александрович" class="cell__form">
+              </label>
+            </li>
+          </ul>
         </fieldset>
         <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Контактная информация:</legend>
-          <label class="cell required card-form__label">
-            Контактный телефон:
-            <input type="tel" name="tel" placeholder="Введите телефон" required="">
-          </label>
-          <label class="cell required card-form__label">
-            Электронная почта:
-            <input type="email" name="e-mail" placeholder="Введите e-mail" required="" class="cell__form">
-          </label>
+          <ul class="card-form__list">
+            <li class="card-form__item">
+              <label class="required cell cell--column">
+                <span class="cell__name cell__name--column">Контактный телефон:</span>
+                <div class="cell__wrapper">
+                  <input type="tel" name="tel" placeholder="Введите телефон" required="" class="cell__form cell__form--column">
+                  <span class="cell__img cell__img--tel"></span>
+                </div>
+              </label>
+            </li>
+            <li class="card-form__item">
+              <label class="required cell cell--column cell--last">
+                <span class="cell__name cell__name--column">Электронная почта:</span>
+                <div class="cell__wrapper">
+                  <input type="email" name="e-mail" placeholder="Введите e-mail" required="" class="cell__form cell__form--column">
+                  <span class="cell__img cell__img--mail"></span>
+                </div>
+              </label>
+            </li>
+          </ul>
         </fieldset>
         <fieldset class="card-form comment__card">
           <legend class="card-form__caption">Ваше общее впечатление:</legend>
-          <label class="cell card-form__label">
+          <label class="cell">
             <input type="radio" name="review" value="positive" checked="" class="cell__form">
-            Скорее положительное
+            <span class="cell__name cell__name--select">Скорее положительное</span>
           </label>
-          <label class="cell card-form__label">
+          <label class="cell">
             <input type="radio" name="review" value="negative" checked="" class="cell__form">
-            Скорее отрицательное
+            <span class="cell__name cell__name--select">Скорее отрицательное</span>
           </label>
-          <label class="cell card-form__label">
+          <label class="cell cell--last">
             <input type="radio" name="review" value="unsettled" checked="" class="cell__form">
-            Затрудняюсь ответить
+            <span class="cell__name cell__name--select">Затрудняюсь ответить</span>
           </label>
         </fieldset>
         <fieldset class="card-form comment__card">
@@ -111,7 +134,7 @@
             Красные скалы
           </label>
         </fieldset>
-        <fieldset class="card-form comment__card">
+        <fieldset class="card-form card-form--last comment__card">
           <legend class="card-form__caption">Опишите свои эмоции:</legend>
           <label class="visually-hidden">
             Опишите подробно свои восторги

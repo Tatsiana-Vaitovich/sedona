@@ -1,0 +1,67 @@
+.cell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.cell--column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cell--last {
+  margin-bottom: 0;
+}
+
+.cell__name {
+  .font-text;
+}
+
+.cell__name--column {
+  padding: 15px 20px;
+}
+
+.cell__wrapper {
+  display: flex;
+}
+
+.cell__form {
+  width: 100%;
+  margin-left: 15px;
+  padding: 15px 20px;
+  font-size: @font-size-caption; /*18px*/
+  font-weight: bold;
+  line-height: 1.2em;
+  text-transform: none;
+  background-color: @bc-grey;
+  border: none;
+}
+
+.cell__form::placeholder {
+  color: @font-color--black;
+}
+
+.cell__form::-moz-placeholder { //не работает??
+  color: @font-color--black;
+}
+
+.cell__form--column {
+  margin: 0;
+}
+
+.cell__img {
+  width: 58px;
+  background-color: @bc-icon;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+}
+
+.cell__img--tel {
+  background-image: url(../img/phone.svg);
+}
+
+.cell__img--mail {
+  background-image: url(../img/mail.svg);
+}
