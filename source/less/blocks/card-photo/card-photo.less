@@ -1,6 +1,11 @@
 .card-photo {
   position: relative;
   padding: 25px 20px;
+  border-top: 1px solid @bc--desabled;
+}
+
+.card-photo--last {
+  border-bottom: 1px solid @bc--desabled;
 }
 
 .card-photo__link {
@@ -19,7 +24,17 @@
   .card-photo {
     width: ((@tablet)-120px)/2;
     padding: 0;
+    border-top: none;
   }
+
+  .card-photo--last {
+    border-bottom: none;
+  }
+
+  .photos__item {
+    border-top: none;
+  }
+
 
   .card-photo__link {
     width: ((@tablet)-120px)/2;
