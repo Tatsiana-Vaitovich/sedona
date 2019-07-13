@@ -3,15 +3,13 @@
   align-items: center;
   width: 100%;
   margin-bottom: 25px;
-}
-
-.cell--column {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.cell--last {
-  margin-bottom: 0;
+  &--column {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &--last {
+    margin-bottom: 0;
+  }
 }
 
 .cell__name {
@@ -36,18 +34,21 @@
   text-transform: none;
   background-color: @bc-grey;
   border: none;
-}
-
-.cell__form::placeholder {
-  color: @font-color--black;
-}
-
-.cell__form::-moz-placeholder { //не работает??
-  color: @font-color--black;
-}
-
-.cell__form--column {
-  margin: 0;
+  &:hover {
+    background-color: @bc-grey--hover;
+  }
+  &:active {
+    background-color: @bc-body;
+  }
+  &::placeholder {
+    color: @font-color--black;
+  }
+  &::-moz-placeholder { //не работает??
+    color: @font-color--black;
+  }
+  &--column {
+    margin: 0;
+  }
 }
 
 .cell__img {
@@ -56,12 +57,10 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 18px 18px;
-}
-
-.cell__img--tel {
-  background-image: url(../img/phone.svg);
-}
-
-.cell__img--mail {
-  background-image: url(../img/mail.svg);
+  &--tel {
+    background-image: url(../img/phone.svg);
+  }
+  &--mail {
+    background-image: url(../img/mail.svg);
+  }
 }
