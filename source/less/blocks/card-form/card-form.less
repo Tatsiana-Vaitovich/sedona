@@ -5,10 +5,6 @@
   border-top: 1px solid @bc--desabled;
 }
 
-.card-form--last {
-  border-bottom: 1px solid @bc--desabled;
-}
-
 .card-form__caption {
   float: left;
   width: 100%;
@@ -29,4 +25,48 @@
 
 .card-form__item:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (min-width: @tablet) {
+  .card-form {
+    padding: 25px 0;
+    border: none;
+    &--checkbox {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  .card-form__caption {
+    width: auto;
+    &--center {
+      width: (@tablet)-120px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      &::before {
+        content: "";
+        height: 1px;
+        width: 120px;
+        margin-right: 65px;
+        background-color: @bc-line;
+      }
+      &::after {
+        content: "";
+        height: 1px;
+        width: 120px;
+        margin-left: 65px;
+        background-color: @bc-line;
+      }
+    }
+  }
+
+  .card-form__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  
 }

@@ -49,6 +49,9 @@
   &--column {
     margin: 0;
   }
+  &--textarea {
+    min-height: 160px;
+  }
 }
 
 .cell__img {
@@ -62,5 +65,11 @@
   }
   &--mail {
     background-image: url(../img/mail.svg);
+  }
+}
+
+@media screen and (min-width: @tablet) {
+  .cell__wrapper {
+    width: 100%;
   }
 }
