@@ -108,6 +108,13 @@
 
 @media screen and (min-width: @tablet) {
   .cell-select--checkbox {
-    width: 250px;
+    width: ((@tablet)-(@padding-tablet)*4)/2;
   }
 }
+
+@media screen and (min-width: @desktop) {
+  .cell-select--checkbox {
+    width: ((@desktop)-(@padding-desktop)*2)/4;
+  }
+}
+

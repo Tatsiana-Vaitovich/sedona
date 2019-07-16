@@ -5,7 +5,7 @@
   padding-left: 20px;
   text-align: center;
   background-color: @bc-body;
-  &--modal {
+  &--modal-success {
     padding-right: 0;
     padding-left: 0;
     padding-bottom: 0;
@@ -16,7 +16,7 @@
   display: block;
   .font-caption;
   font-size: @font-size-caption--big;
-  &--modal {
+  &--modal-success {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -24,7 +24,7 @@
 
 .postamble__text {
   .font-text;
-  &--modal {
+  &--modal-success {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -37,7 +37,7 @@
   &--narrow {
     width: 180px;
   }
-  &--modal {
+  &--modal-success {
     margin-top: 0;
   }
 }
@@ -53,6 +53,10 @@
     padding-top: 50px;
     padding-bottom: 55px;
     &--modal {
+      padding-top: 60px;
+      padding-bottom: 50px;
+    }
+    &--modal-success {
       padding-bottom: 0;
     }
 
@@ -62,7 +66,8 @@
     width: 490px;
     margin-right: auto;
     margin-left: auto;
-    &--modal {
+    &--modal,
+    &--modal-success {
       width: auto;
     }
   }
@@ -77,7 +82,7 @@
     &--narrow {
       width: 272px;
     }
-    &--modal {
+    &--modal-success {
       margin-top: 0;
     }
   }
@@ -86,6 +91,13 @@
 @media screen and (min-width: @desktop) {
   .postamble {
     padding-bottom: 70px;
+    &--modal {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    &--modal-success {
+      padding-bottom: 0;
+    }
   }
 
 }

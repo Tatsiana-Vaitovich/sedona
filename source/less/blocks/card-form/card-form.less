@@ -41,10 +41,11 @@
   .card-form__caption {
     width: auto;
     &--center {
-      width: (@tablet)-120px;
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: space-between;
+      width: (@tablet)-(@padding-tablet)*2;
       &::before {
         content: "";
         height: 1px;
@@ -67,6 +68,17 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+}
 
-  
+@media screen and (min-width: @desktop) {
+  .card-form__caption--center {
+      width: (@desktop)-(@padding-desktop)*2;
+      &::before {
+        width: 180px;
+      }
+      &::after {
+        width: 180px;
+      }
+    }
+
 }
