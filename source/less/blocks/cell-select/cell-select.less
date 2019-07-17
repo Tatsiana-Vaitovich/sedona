@@ -106,6 +106,20 @@
   border: none;
 }
 
+.cell-select__form:focus+.cell-select__name::before,
+.cell-select__form:focus+.cell-select__name::after,
+.cell-select__form:focus+.cell-select__name--checkbox::before,
+.cell-select__form:focus+.cell-select__name--checkbox::after {
+  .outline-for-cell-select__form;
+}
+
+.cell-select__form+.cell-select__name::before,
+.cell-select__form+.cell-select__name::after,
+.cell-select__form+.cell-select__name--checkbox::before,
+.cell-select__form+.cell-select__name--checkbox::after {
+  cursor: pointer;;
+}
+
 @media screen and (min-width: @tablet) {
   .cell-select--checkbox {
     width: ((@tablet)-(@padding-tablet)*4)/2;
