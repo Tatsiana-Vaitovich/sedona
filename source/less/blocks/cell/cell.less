@@ -25,6 +25,7 @@
 
 .cell__wrapper {
   display: flex;
+  width: 100%;
 }
 
 .cell__form {
@@ -37,6 +38,7 @@
   text-transform: none;
   background-color: @bc-grey;
   border: none;
+  overflow: hidden;
   &:hover {
     background-color: @bc-grey--hover;
   }
@@ -46,10 +48,7 @@
   &::placeholder {
     color: @font-color--black;
   }
-  &::-moz-placeholder { //не работает??
-    color: @font-color--black;
-  }
-  &--column {
+&--column {
     margin: 0;
   }
   &--textarea {

@@ -53,9 +53,7 @@
       </div>
       <form action="http://echo.htmlacademy.ru" method="POST" class="comment__form">
         <fieldset class="card-form comment__card comment__card--two">
-          <legend class="card-form__caption">
-            Представьтесь:
-          </legend>
+          <legend class="card-form__caption">Представьтесь:</legend>
           <ul role="none" class="card-form__list">
             <li class="card-form__item">
               <label class="cell">
@@ -83,19 +81,19 @@
             <li class="card-form__item">
               <label class="cell cell--column">
                 <span class="required cell__name cell__name--column">Контактный телефон</span>
-                <div class="cell__wrapper">
+                <span class="cell__wrapper">
                   <input type="tel" name="tel" placeholder="Введите телефон" required="" class="cell__form cell__form--column">
                   <span class="cell__img cell__img--tel"></span>
-                </div>
+                </span>
               </label>
             </li>
             <li class="card-form__item">
               <label class="cell cell--column cell--last">
                 <span class="required cell__name cell__name--column">Электронная почта</span>
-                <div class="cell__wrapper">
+                <span class="cell__wrapper">
                   <input type="email" name="e-mail" placeholder="Введите e-mail" required="" class="cell__form cell__form--column">
                   <span class="cell__img cell__img--mail"></span>
-                </div>
+                </span>
               </label>
             </li>
           </ul>
@@ -104,11 +102,11 @@
           <legend class="card-form__caption">Ваше общее впечатление:</legend>
           <label class="cell-select">
             <input type="radio" name="review" value="positive" checked="" class="cell-select__form">
-            <span class="cell__name cell-select__name">Скорее положительное</span>
+            <span class="cell-select__name">Скорее положительное</span>
           </label>
           <label class="cell-select">
             <input type="radio" name="review" value="negative" checked="" class="cell-select__form">
-            <span class="cell__name cell-select__name">Скорее отрицательное</span>
+            <span class="cell-select__name">Скорее отрицательное</span>
           </label>
           <label class="cell-select cell-select--last">
             <input type="radio" name="review" value="unsettled" checked="" class="cell-select__form">
@@ -139,7 +137,7 @@
         <fieldset class="card-form comment__card">
           <legend class="card-form__caption card-form__caption--center">Опишите свои эмоции:</legend>
           <label class="cell">
-            <span class="cell__name cell-name--column visually-hidden">Опишите подробно свои восторги</span>
+            <span class="cell__name visually-hidden">Опишите подробно свои восторги</span>
             <textarea name="comment" placeholder="Опишите подробно все свои восторги" class="cell__form cell__form--column cell__form--textarea"></textarea>
           </label>
         </fieldset>
@@ -162,7 +160,7 @@
               <svg width="46" height="48" class="networks__img networks__img--twitter">
                 <use xlink:href="img/sprite.svg#icon-twitter"></use>
               </svg>
-              </a>
+            </a>
           </li>
           <li class="networks__item networks__item--facebook">
             <a href="#" class="networks__link">

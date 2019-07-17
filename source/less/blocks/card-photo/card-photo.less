@@ -22,7 +22,7 @@
 
 @media screen and (min-width: @tablet) {
   .card-photo {
-    width: ((@tablet)-120px)/2;
+    width: ((@tablet)-(@tablet)*2)/2;
     padding: 0;
     border-top: none;
   }
@@ -32,7 +32,7 @@
   }
 
   .card-photo__link {
-    width: ((@tablet)-120px)/2;
+    width: ((@tablet)-(@tablet)*2)/2;
     margin-bottom: 0;
     height: 267px;
   }
@@ -44,7 +44,7 @@
 
   .card-photo--first,
   .card-photo__link--first {
-    width: (@tablet)-120px;
+    width: (@tablet)-(@tablet)*2;
   }
 
   .card-photo__wrapper {
@@ -63,16 +63,16 @@
 @media screen and (min-width: @desktop) {
   .card-photo {
     position: relative;
-    width: ((@desktop)-60px)/3;
+    width: ((@desktop)-(@padding-desktop--photo)*2)/3;
   }
 
   .card-photo__link {
-    width: ((@desktop)-60px)/3;
+    width: ((@desktop)-(@padding-desktop--photo)*2)/3;
   }
 
   .card-photo--first,
   .card-photo__link--first {
-    width: (@desktop)-60px;
+    width: (@desktop)-(@padding-desktop--photo)*2;
   }
 
   .card-photo__link--first {
