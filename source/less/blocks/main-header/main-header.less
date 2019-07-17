@@ -47,22 +47,13 @@
 }
 
 .main-header__img-wrapper {
+  position: relative;
   margin: 0;
   padding: 50px 0 60px;
-}
-
-.main-header__img-wrapper--index {
-  padding: 90px 0;
-}
-
-.main-header--bg,
-.main-header__img-wrapper--bg {
-  position: relative;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-  background-color: @bc-header;
-  background-size: cover; //Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.
+  background-position: center bottom;
+  background-size: auto;
   &::after {
     content: "";
     position: absolute;
@@ -78,9 +69,13 @@
   }
 }
 
+.main-header__img-wrapper--index {
+  padding: 90px 0;
+  background-size: cover;
+}
+
 @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .main-header--bg,
-  .main-header__img-wrapper--bg {
+  .main-header__img-wrapper {
     background-image: url("../img/bg-back-mobile@2x.jpg");
   }
 }
@@ -110,9 +105,7 @@
     padding: 80px 0 90px;
   }
 
-
-  .main-header--bg,
-  .main-header__img-wrapper--bg {
+  .main-header__img-wrapper {
     background-image: url("../img/bg-back-tablet@1x.jpg");
     &::after {
       height: 56px;
@@ -121,8 +114,7 @@
   }
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .main-header--bg,
-    .main-header__img-wrapper--bg {
+    .main-header__img-wrapper {
       background-image: url("../img/bg-back-tablet@2x.jpg");
     }
   }
@@ -152,8 +144,7 @@
     padding: 80px 0 100px;
   }
 
-  .main-header--bg,
-  .main-header__img-wrapper--bg {
+  .main-header__img-wrapper {
     background-image: url("../img/bg-back-desktop@1x.jpg");
     &::after {
       height: 56px;
@@ -162,8 +153,7 @@
   }
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .main-header--bg,
-    .main-header__img-wrapper--bg {
+    .main-header__img-wrapper {
       background-image: url("../img/bg-back-desktop@2x.jpg");
     }
   }
