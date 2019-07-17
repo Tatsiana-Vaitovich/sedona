@@ -1,3 +1,11 @@
+.main-header {
+  position: relative;
+  padding-bottom: 160px;
+  &--index {
+    padding-bottom: 0;
+  }
+}
+
 .main-header__wrapper {
   position: relative;
   display: flex;
@@ -27,6 +35,7 @@
 .main-header__btn-wrapper {
   width: inherit;
   background-color: @bc-body;
+  z-index: 1;
 }
 
 .main-header__btn {
@@ -46,10 +55,21 @@
   cursor: pointer;
 }
 
+.main-header__wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  &--index {
+    position: static;
+  }
+}
+
 .main-header__img-wrapper {
   position: relative;
+  height: 388px;
   margin: 0;
-  padding: 50px 0 60px;
+  padding: 289px 0 60px;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -85,6 +105,10 @@
 }
 
 @media screen and (min-width: @tablet) {
+.main-header {
+  padding: 0;
+}
+
   .main-header__wrapper {
     justify-content: center;
   }
@@ -97,7 +121,12 @@
     display: none;
   }
 
+  .main-header__wrap {
+    position: static;
+  }
+
   .main-header__img-wrapper {
+    height: auto;
     padding: 90px 0 110px;
   }
 
