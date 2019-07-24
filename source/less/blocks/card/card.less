@@ -106,35 +106,36 @@
 
   .card__description {
     width: @tablet/3;
-    padding-top: 38px;
+    padding-top: 45px;
     padding-right: 45px;
-    padding-bottom: 38px;
+    padding-bottom: 45px;
     padding-left: 45px;
-  }
-
-  .card__description--triangle {
-    &::before {
-      display: none;
+    &--triangle {
+      &::before {
+        display: none;
+      }
     }
-  }
-
-  .card__description--border {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    &::after {
-      display: none;
+    &--border {
+      padding-top: 45px;
+      padding-bottom: 45px;
+        &::after {
+          display: none;
+        }
+      }
+    &--information {
+      padding-top: 60px;
+      padding-right: 45px;
+      padding-bottom: 61px;
+      padding-left: 45px;
+        &::before {
+          margin-bottom: 24px;
+      }
     }
-  }
-
-  .card__description--information {
-    padding-top: 60px;
-    padding-right: 45px;
-    padding-bottom: 60px;
-    padding-left: 45px;
   }
 
   .card__img-wrapper {
     width: (2*@tablet)/3;
+    height: 256px;
   }
 }
 

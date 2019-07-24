@@ -96,45 +96,44 @@
   }
 
   .description__caption {
-    width: 130px;
+    width: 144px;
+    .font-caption--tablet;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-  }
-
-  .description__caption--information {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 30px;
-    &::before {
-      height: 75px;
-      margin: 0 auto 30px auto;
+    &--information {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 22px;
+      &::before {
+        height: 75px;
+        margin: 0 auto 24px auto;
+      }
     }
-  }
-
-  .description__caption--information-house {
-    &::before {
-      width: 75px;
+    &--information-house {
+      &::before {
+        width: 75px;
+      }
     }
-  }
-
-  .description__caption--information-food {
-    &::before {
-      width: 75px;
+    &--information-food {
+      &::before {
+        width: 75px;
+      }
     }
-  }
-
-  .description__caption--information-gift {
-    &::before {
-    width: 64px;
+    &--information-gift {
+      &::before {
+      width: 64px;
+      }
     }
   }
 
   .description__text {
     text-align: center;
-  }
-
-  .description__text--information {
+    &::before {
+      margin-bottom: 22px;
+    }
+    &--information {
     margin-left: 0;
+    }
   }
 }

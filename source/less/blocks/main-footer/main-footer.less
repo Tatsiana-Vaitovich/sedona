@@ -16,19 +16,29 @@
 
   .main-footer__networks,
   .main-footer__copyright {
-    margin: 34px 0 0 0;
+    margin: 30px 0 0 0;
 }
 
 @media screen and (min-width: @tablet) {
   .main-footer {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: (@tablet)-(@padding-tablet)*2;
+    margin: 0 auto;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   .main-footer__visit,
   .main-footer__networks,
   .main-footer__copyright {
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .main-footer {
+    width: (@desktop)-(@padding-desktop)*2;
   }
 }
