@@ -14,10 +14,13 @@
   font-size: @font-size-caption--big;
 }
 
-  .main-footer__networks,
-  .main-footer__copyright {
-    margin: 30px 0 0 0;
+  .main-footer__networks {
+    margin: 30px 0 0;
 }
+
+  .main-footer__copyright {
+    margin: 34px 0 0;
+  }
 
 @media screen and (min-width: @tablet) {
   .main-footer {
@@ -40,5 +43,10 @@
 @media screen and (min-width: @desktop) {
   .main-footer {
     width: (@desktop)-(@padding-desktop)*2;
+  }
+
+  .main-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }

@@ -150,11 +150,21 @@
 
   .card__description {
     width: @desktop/3;
-    padding-right: 55px;
-    padding-left:55px;
+    padding: 52px 55px;
+    &--information {
+      padding-top: 60px;
+      padding-bottom: 82px;
+    }
+    &--border {
+      padding: 45px 55px 65px;
+    }
   }
 
   .card__img-wrapper {
     width: (2*@desktop)/3;
+  }
+
+  .card__img {
+    margin-top: -72px;
   }
 }
