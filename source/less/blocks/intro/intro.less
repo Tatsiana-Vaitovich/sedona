@@ -1,9 +1,5 @@
 .intro {
   margin: 0;
-  padding-top: 42px;
-  padding-right: 20px;
-  padding-bottom: 25px;
-  padding-left: 20px;
   text-align: center;
   background-color: @bc-body;
 }
@@ -15,6 +11,9 @@
 
 .intro__text {
   .font-text;
+  &--min-line-height {
+    line-height: 1.72em;
+  }
 }
 
 @media screen and (min-width: @tablet) {
@@ -22,12 +21,13 @@
     width: 530px;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
   }
 
   .intro__caption {
     .font-caption--tablet;
     margin-bottom: 29px; 
+    &--big {
+      font-size: 30px;
+    }
   }
 }
