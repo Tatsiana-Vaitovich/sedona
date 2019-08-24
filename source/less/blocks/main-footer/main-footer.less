@@ -1,13 +1,13 @@
 .main-footer {
   display: flex;
   flex-direction: column;
-  padding-top: 33px;
-  padding-bottom: 20px;
+  padding-top: 73px;
+  padding-bottom: 73px;
   text-align: center;
   background-color: @bc-body;
-  &--big-padding {
-    padding-top: 73px;
-    padding-bottom: 73px;
+  &--index {
+    padding-top: 33px;
+    padding-bottom: 20px;
   }
 }
 
@@ -23,7 +23,10 @@
 }
 
   .main-footer__copyright {
-    margin: 34px 0 0;
+    margin: 35px 0 0;
+    &--index {
+      margin-top: 38px;
+    }
   }
 
 @media screen and (min-width: @tablet) {
@@ -33,11 +36,11 @@
     align-items: center;
     width: (@tablet)-(@padding-tablet)*2;
     margin: 0 auto;
-    padding-top: 36px;
-    padding-bottom: 36px;
-    &--big-padding {
-      padding-top: 73px;
-      padding-bottom: 73px;
+    padding-top: 73px;
+    padding-bottom: 73px;
+    &--index {
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
   }
 
@@ -54,11 +57,14 @@
   }
 
   .main-footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    &--big-padding {
-      padding-top: 73px;
-      padding-bottom: 73px;
+    padding-top: 73px;
+    padding-bottom: 73px;
+    &--index {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    &--inner {
+      padding-top: 117px;
     }
   }
 }
