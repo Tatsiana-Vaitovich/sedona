@@ -1,6 +1,9 @@
 .card-form {
   margin: 0;
-  padding: 25px 20px;
+  padding-top: 18px;
+  padding-right: 20px;
+  padding-bottom: 24px;
+  padding-left: 20px;
   border: none;
   border-top: 1px solid @bc--desabled;
 }
@@ -9,22 +12,18 @@
   float: left;
   width: 100%;
   .font-caption;
+  margin-bottom: 22px;
   font-weight: bold;
   text-align: center;
+  &--textarea {
+    line-height: 1.2em;
+  }
 }
 
 .card-form__list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.card-form__item:nth-child(1n+1) {
-  margin-bottom: 25px;
-}
-
-.card-form__item:last-child {
-  margin-bottom: 0;
 }
 
 @media screen and (min-width: @tablet) {

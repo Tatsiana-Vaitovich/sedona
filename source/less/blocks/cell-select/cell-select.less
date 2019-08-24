@@ -2,9 +2,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 26px;
+  &--checkbox {
+    margin-bottom: 34px;
+  }
   &--last {
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
 }
 
@@ -17,7 +20,7 @@
 
 .cell-select__name {
   position: relative;
-  margin-left: 24px;
+  margin-left: 32px;
   font-size: @font-size-caption; /*18px*/
   font-weight: bold;
   line-height: 1.2em;
@@ -27,11 +30,11 @@
     content: "";
     position: absolute;
     top: 50%;
-    left: -70px;
+    left: -76px;
     transform: translateY(-50%);
     display: block;
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     background-color: @bc-grey;
     border-radius: 50%;
   }
@@ -46,11 +49,11 @@
     content: "";
     position: absolute;
     top: 50%;
-    left: -70px;
+    left: -76px;
     transform: translateY(-50%);
     display: block;
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     background-color: @bc-btn;
     border: 15px solid @bc-grey;
     border-radius: 50%;

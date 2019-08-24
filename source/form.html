@@ -51,7 +51,7 @@
     <section class="comment">
       <div class="intro comment__caption">
         <h2 class="intro__caption">Оставьте свой отзыв</h2>
-        <p class="intro__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+        <p class="intro__text intro__text--min-line-height">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
       </div>
       <form action="http://echo.htmlacademy.ru" method="POST" class="comment__form">
         <fieldset class="card-form comment__card comment__card--two">
@@ -90,7 +90,7 @@
               </label>
             </li>
             <li class="card-form__item">
-              <label class="cell cell--column cell--last">
+              <label class="cell cell--column cell--column-last cell--last">
                 <span class="required cell__name cell__name--column">Электронная почта</span>
                 <span class="cell__wrapper">
                   <input type="email" name="e-mail" placeholder="Введите e-mail" required="" class="cell__form cell__form--column">
@@ -130,15 +130,15 @@
               <input type="checkbox" name="visit" value="park" checked="" class="cell-select__form">
               <span class="cell-select__name cell-select__name--checkbox">Слайд-парк</span>
             </label>
-            <label class="cell-select cell-select--checkbox">
+            <label class="cell-select cell-select--checkbox cell-select--last">
               <input type="checkbox" name="visit" value="rocks" class="cell-select__form">
               <span class="cell-select__name cell-select__name--checkbox">Красные скалы</span>
             </label>
           </div>
         </fieldset>
         <fieldset class="card-form comment__card">
-          <legend class="card-form__caption card-form__caption--center">Опишите свои эмоции:</legend>
-          <label class="cell">
+          <legend class="card-form__caption card-form__caption--textarea card-form__caption--center">Опишите свои эмоции:</legend>
+          <label class="cell cell--last">
             <span class="cell__name visually-hidden">Опишите подробно свои восторги</span>
             <textarea name="comment" placeholder="Опишите подробно все свои восторги" class="cell__form cell__form--column cell__form--textarea"></textarea>
           </label>
@@ -152,7 +152,7 @@
       </form>
     </section>
 
-    <footer class="main-footer">
+    <footer class="main-footer main-footer--form">
       <b class="main-footer__visit">#visitsedona</b>
       <section class="networks main-footer__networks">
         <ul class="networks__list">
