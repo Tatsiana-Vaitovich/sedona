@@ -28,23 +28,30 @@
 
 @media screen and (min-width: @tablet) {
   .card-form {
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-right: 0;
+    padding-bottom: 30px;
+    padding-left: 0;
     border: none;
     &--checkbox {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      padding-bottom: 0;
     }
   }
 
   .card-form__caption {
     width: auto;
+    margin-bottom: 60px;
+    .font-caption--tablet;
     &--center {
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: space-between;
       width: (@tablet)-(@padding-tablet)*2;
+      margin-bottom: 25px;
       &::before {
         content: "";
         height: 1px;
@@ -59,6 +66,12 @@
         margin-left: 65px;
         background-color: @bc-line;
       }
+    }
+    &--checkbox {
+      margin-bottom: 3px;
+    }
+    &--textarea {
+      margin-bottom: 57px;
     }
   }
 

@@ -21,8 +21,8 @@
 .cell-select__name {
   position: relative;
   margin-left: 32px;
+  font-family: @font-family--bold;
   font-size: @font-size-caption; /*18px*/
-  font-weight: bold;
   line-height: 1.2em;
   text-transform: none;
   color: @font-color--black;
@@ -120,12 +120,42 @@
 .cell-select__form+.cell-select__name::after,
 .cell-select__form+.cell-select__name--checkbox::before,
 .cell-select__form+.cell-select__name--checkbox::after {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 @media screen and (min-width: @tablet) {
-  .cell-select--checkbox {
-    width: ((@tablet)-(@padding-tablet)*4)/2;
+  .cell-select {
+    margin-bottom: 22px;
+    &--last {
+      margin-bottom: 0;
+    }
+    &--checkbox {
+      width: ((@tablet)-(@padding-tablet)*4)/2;
+      margin-bottom: 31px;
+    }
+  }
+
+  .cell-select__form {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cell-select__name {
+    margin-left: 20px;
+    &::after {
+      left: -78px;
+      width: 56px;
+      height: 56px;
+      border: 17px solid @bc-grey;
+    }
+    &::before {
+      left: -78px;
+      width: 56px;
+      height: 56px;
+    }
+    &--checkbox {
+      margin-left: 56px;
+    }
   }
 }
 
