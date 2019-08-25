@@ -98,3 +98,22 @@
     width: 65px;
   }
 }
+
+@media screen and (min-width: @desktop) {
+  .cell {
+    &--row {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .cell__name {
+    &--row {
+      margin-right: 20px;
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom:0;
+      padding-left: 0;
+    }
+  }
+}

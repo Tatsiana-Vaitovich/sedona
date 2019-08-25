@@ -161,6 +161,18 @@
 
 @media screen and (min-width: @desktop) {
   .cell-select--checkbox {
-    width: ((@desktop)-(@padding-desktop)*2)/4;
+    width: auto;
+  }
+
+  .cell-select__name {
+    &--checkbox {
+      margin-left: 26px;
+      &::before {
+        left: -82px;
+      }
+      &::after {
+        left: -82px;
+      }
+    }
   }
 }
