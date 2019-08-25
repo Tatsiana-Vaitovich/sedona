@@ -109,10 +109,10 @@
   border: none;
 }
 
-.cell-select__form:focus+.cell-select__name::before,
-.cell-select__form:focus+.cell-select__name::after,
-.cell-select__form:focus+.cell-select__name--checkbox::before,
-.cell-select__form:focus+.cell-select__name--checkbox::after {
+.cell-select__form:focus-visible+.cell-select__name::before,
+.cell-select__form:focus-visible+.cell-select__name::after,
+.cell-select__form:focus-visible+.cell-select__name--checkbox::before,
+.cell-select__form:focus-visible+.cell-select__name--checkbox::after {
   .outline-for-cell-select__form;
 }
 
@@ -162,6 +162,7 @@
 @media screen and (min-width: @desktop) {
   .cell-select--checkbox {
     width: auto;
+    min-width: 210px;
   }
 
   .cell-select__name {
