@@ -1,18 +1,27 @@
 .photos__caption {
-  padding: 38px 25px 26px;
+  padding-top: 38px;
+  padding-right: 25px;
+  padding-bottom: 26px;
+  padding-left: 25px;
 }
 
 .photos__list {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
   list-style: none;
 }
 
 @media screen and (min-width: @tablet) {
   .photos {
-    padding: 0 @padding-tablet;
+    padding-top: 0;
+    padding-right: @padding-tablet;
+    padding-bottom: 0;
+    padding-left: @padding-tablet;
   }
 
   .photos__caption {
@@ -45,7 +54,10 @@
 
 @media screen and (min-width: @desktop) {
   .photos {
-    padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
   }
 
   .photos__caption {

@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
   list-style: none;
   background-color: @bc-body;
   z-index: 1;
@@ -86,7 +89,10 @@
 
   .main-menu__link {
     .font-text;
-    padding: 15px 0;
+    padding-top: 15px;
+    padding-right: 0;
+    padding-bottom: 15px;
+    padding-left: 0;
     height: 55px;
     font-family: "ptsansbold";
     color: @font-color-caption;
@@ -108,6 +114,9 @@
 @media screen and (min-width: @desktop) {
   .main-menu__link {
     height: auto;
-    padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
   }
 }
