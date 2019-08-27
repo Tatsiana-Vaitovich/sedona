@@ -15,12 +15,10 @@
             }, {
             searchControlProvider: 'yandex#search'
         }),
-
         // Создаём макет содержимого.
         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
             '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
         ),
-
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
             hintContent: 'Cedona',
             balloonContent: ''
@@ -41,9 +39,7 @@
 };
     </script>
     <script async="" src="js/picturefill.js"></script>
-
   <body class="container">
-
     <header class="main-header main-header--index">
       <h1 class="visually-hidden">City of Sedona</h1>
       <div class="main-header__wrapper">
@@ -82,7 +78,6 @@
         </p>
       </div>
     </header>
-
     <section class="attraction">
       <div class="intro attraction__caption">
         <h2 class="intro__caption">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
@@ -174,7 +169,6 @@
         </li>
       </ol>
     </section>
-
     <section class="hotel-offer">
       <h2 class="hotel-offer__caption visually-hidden">Найти гостиницу</h2>
       <div class="postamble hotel-offer__info">
@@ -183,9 +177,7 @@
         <a href="#" class="postamble__btn btn">Найти гостиницу</a>
       </div>
     </section>
-
     <section id="map" class="map"></section>
-
     <footer class="main-footer main-footer--index">
       <b class="main-footer__visit">#visitsedona</b>
       <section class="networks main-footer__networks">
@@ -225,7 +217,5 @@
         </a>
       </section>
     </footer>
-
   </body>
-
 </html>
