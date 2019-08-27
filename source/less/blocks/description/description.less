@@ -2,44 +2,38 @@
   margin: 0;
   .font-caption;
   margin-bottom: 10px;
-}
-
-.description__caption--light {
-  color: @font-color-light;
-}
-
-.description__caption--information {
-  display: flex;
-  align-items: center;
-  //text-align: left;
-  &::before {
-    content: "";
-    display: block;
-    height: 37px;
-    margin-right: 10px;
-    background-size: contain;
-    background-repeat: no-repeat;
+  &--light {
+    color: @font-color-light;
   }
-}
-
-.description__caption--information-house {
-  &::before {
-    width: 37px;
-    background-image: url("../img/house.svg");
+  &--information {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: block;
+      height: 37px;
+      margin-right: 10px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
-}
-
-.description__caption--information-gift {
-  &::before {
-    width: 32px;
-    background-image: url("../img/gift.svg");
+  &--information-house {
+    &::before {
+      width: 37px;
+      background-image: url("../img/house.svg");
+    }
   }
-}
-
-.description__caption--information-food {
-  &::before {
-    width: 37px;
-    background-image: url("../img/burger.svg");
+  &--information-gift {
+    &::before {
+      width: 32px;
+      background-image: url("../img/gift.svg");
+    }
+  }
+  &--information-food {
+    &::before {
+      width: 37px;
+      background-image: url("../img/burger.svg");
+    }
   }
 }
 
@@ -54,45 +48,42 @@
     margin-bottom: 15px;
     margin-left: auto;
   }
-}
-
-.description__text--number2 {
-  &::before {
-    content: "\2013 \2116 2 \2013"
+  &--number2 {
+    &::before {
+      content: "\2013 \2116 2 \2013"
+    }
   }
-}
-
-.description__text--number3 {
-  &::before {
-    content: "\2013 \2116 3 \2013"
+  &--number3 {
+    &::before {
+      content: "\2013 \2116 3 \2013"
+    }
   }
-}
-
-.description__text--number4 {
-  &::before {
-    content: "\2013 \2116 4 \2013"
+  &--number4 {
+    &::before {
+      content: "\2013 \2116 4 \2013"
+    }
   }
-}
-
-.description__text--number5 {
-  &::before {
-    content: "\2013 \2116 5 \2013"
+  &--number5 {
+    &::before {
+      content: "\2013 \2116 5 \2013"
+    }
   }
-}
-
-.description__text--information {
-  margin-left: 50px;
-  text-align: left;
-  &::before {
-    display: none;
+  &--information {
+    margin-left: 50px;
+    text-align: left;
+    &::before {
+      display: none;
+    }
   }
 }
 
 @media screen and (min-width: @tablet) {
-  .description--information {
-    padding-left: 45px;
-    padding-right: 45px;
-    height: auto;
+  .description {
+    &--information {
+      padding-left: 45px;
+      padding-right: 45px;
+      height: auto;
+    }
   }
 
   .description__caption {

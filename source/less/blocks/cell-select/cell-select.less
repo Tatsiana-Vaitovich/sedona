@@ -73,7 +73,7 @@
   opacity: 1;
 }
 
-.cell-select__form:not(:checked)+select__name::before {
+.cell-select__form:not(:checked)+.cell-select__name::before {
   opacity: 1;
 }
 
@@ -160,9 +160,11 @@
 }
 
 @media screen and (min-width: @desktop) {
-  .cell-select--checkbox {
+  .cell-select {
+    &--checkbox {
     width: auto;
     min-width: 210px;
+    }
   }
 
   .cell-select__name {

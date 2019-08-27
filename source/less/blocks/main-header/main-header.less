@@ -92,14 +92,13 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-}
-
-.main-header__img-wrapper--index {
-  padding-top: 90px;
-  padding-right: 0;
-  padding-bottom: 90px;
-  padding-left: 0;
-  background-size: cover;
+  &--index {
+    padding-top: 90px;
+    padding-right: 0;
+    padding-bottom: 90px;
+    padding-left: 0;
+    background-size: cover;
+  }
 }
 
 @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -139,20 +138,16 @@
     padding-right: 0px;
     padding-bottom: 118px;
     padding-left: 0px;
-  }
-
-  .main-header__img-wrapper--index {
-    padding-top: 80px;
-    padding-right: 0px;
-    padding-bottom: 90px;
-    padding-left: 0px;
-  }
-
-  .main-header__img-wrapper {
     background-image: url("../img/bg-back-tablet@1x.jpg");
     &::after {
       height: 56px;
       background-image: url("../img/bg-intro-triangle-tablet.svg");
+    }
+    &--index {
+      padding-top: 80px;
+      padding-right: 0px;
+      padding-bottom: 90px;
+      padding-left: 0px;
     }
   }
 
@@ -165,11 +160,10 @@
   .main-header__img {
     width: 458px;
     height: 78px;
-  }
-
-  .main-header__img--index {
-    width: 460px;
-    height: 350px;
+    &--index {
+      width: 460px;
+      height: 350px;
+    }
   }
 }
 
@@ -184,20 +178,16 @@
     padding-right: 0px;
     padding-bottom: 121px;
     padding-left: 0px;
-  }
-
-  .main-header__img-wrapper--index {
-    padding-top: 80px;
-    padding-right: 0px;
-    padding-bottom: 89px;
-    padding-left: 0px;
-  }
-
-  .main-header__img-wrapper {
     background-image: url("../img/bg-back-desktop@1x.jpg");
     &::after {
       height: 56px;
       background-image: url(../img/bg-intro-triangle-desktop.svg);
+    }
+    &--index {
+      padding-top: 80px;
+      padding-right: 0px;
+      padding-bottom: 89px;
+      padding-left: 0px;
     }
   }
 
@@ -210,10 +200,9 @@
   .main-header__img {
     width: 460px;
     height: 79px;
-  }
-
-  .main-header__img--index {
-    widows: 460px;
-    height: 350px;
+    &--index {
+      widows: 460px;
+      height: 350px;
+    }
   }
 }

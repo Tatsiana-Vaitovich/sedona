@@ -21,13 +21,12 @@
   &::after {
     content: ":";
   }
-}
-
-.cell__name--column {
-  padding-top: 0px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-  padding-left: 20px;
+  &--column {
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+  }
 }
 
 .cell__wrapper {
@@ -89,8 +88,10 @@
     }
   }
 
-  .cell__name--column {
+  .cell__name {
+    &--column {
     padding-bottom: 8px;
+    }
   }
 
   .cell__wrapper {
