@@ -38,14 +38,12 @@
 
   .photos__item {
     border-top: none;
-  }
-
-  .photos__item:nth-child(odd) {
-    background-color: @bc-grey;
-  }
-
-  .photos__item:nth-child(even) {
-    background-color: @bc-grey--dark;
+    &:nth-child(odd) {
+      background-color: @bc-grey;
+    }
+    &:nth-child(even) {
+      background-color: @bc-grey--dark;
+    }
   }
 }
 
