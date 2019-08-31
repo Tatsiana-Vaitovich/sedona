@@ -81,7 +81,8 @@
   opacity: 0;
 }
 
-.cell-select__form:hover+.cell-select__name::before {
+.cell-select__form:hover+.cell-select__name::before,
+.cell-select__form:focus+.cell-select__name::before {
   background-color: @bc-grey--hover;
 }
 
@@ -89,12 +90,14 @@
   background-color: @bc-btn--active;
 }
 
-.cell-select__form:hover+.cell-select__name::after {
+.cell-select__form:hover+.cell-select__name::after,
+.cell-select__form:focus+.cell-select__name::after {
   background-color: @bc-btn--hover;
   border: 15px solid @bc-grey--hover;
 }
 
-.cell-select__form:hover+.cell-select__name--checkbox::after {
+.cell-select__form:hover+.cell-select__name--checkbox::after,
+.cell-select__form:focus+.cell-select__name--checkbox::after {
   background-color: @bc-grey--hover;
   border: none;
 }
