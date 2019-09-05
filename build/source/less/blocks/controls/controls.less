@@ -1,0 +1,81 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.controls__volume {
+  background-color: fade(@bc-dark, 60%);
+}
+
+.controls__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 22px;
+  padding-right: 25px;
+  padding-bottom: 22px;
+  padding-left: 25px;
+  background-color: @bc-grey;
+}
+
+.controls__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+}
+
+.controls__btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  .outline;
+}
+
+.controls__btn-img {
+  fill: @bc-btn;
+}
+
+@media screen and (min-width: @tablet) {
+  .controls {
+    position: relative;
+    width: 100%;
+    min-height: 93px;
+    margin: 0;
+    background-color: fade(@bc-dark, 60%);
+  }
+
+  .controls__volume {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    margin: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+  }
+
+  .controls__buttons {
+    padding-top: 36px;
+    padding-right: 41px;
+    padding-bottom: 36px;
+    padding-left: 35px;
+    background-color: transparent;
+  }
+
+  .controls__btn-img {
+    fill: @bc-btn--tablet;
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .controls {
+    min-height: 96px;
+  }
+}

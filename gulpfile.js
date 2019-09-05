@@ -74,4 +74,5 @@ gulp.task("server", function () {
   gulp.watch("source/*.html").on("change", server.reload);
 });
 
-gulp.task("start", gulp.series("css", "server"));
+gulp.task("build", gulp.series("css", "sprite", "html"));
+gulp.task("start", gulp.series("build", "server"));

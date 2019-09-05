@@ -1,0 +1,184 @@
+.cell-select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 26px;
+  &--checkbox {
+    margin-bottom: 34px;
+  }
+  &--last {
+    margin-bottom: 8px;
+  }
+}
+
+.cell-select__form {
+  width: 46px;
+  height: 46px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.cell-select__name {
+  position: relative;
+  margin-left: 32px;
+  font-family: @font-family--bold;
+  font-size: @font-size-caption; /*18px*/
+  line-height: 1.2em;
+  text-transform: none;
+  color: @font-color--black;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -76px;
+    transform: translateY(-50%);
+    display: block;
+    width: 52px;
+    height: 52px;
+    background-color: @bc-grey;
+    border-radius: 50%;
+  }
+  &--checkbox::before {
+    background-image: url(../img/tick.svg);
+    background-size: 24px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -76px;
+    transform: translateY(-50%);
+    display: block;
+    width: 52px;
+    height: 52px;
+    background-color: @bc-btn;
+    border: 15px solid @bc-grey;
+    border-radius: 50%;
+  }
+  &--checkbox::after {
+    background-color: @bc-grey;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.cell-select__form:checked+.cell-select__name::before {
+  opacity: 0;
+}
+
+.cell-select__form:checked+.cell-select__name::after {
+  opacity: 1;
+}
+
+.cell-select__form:not(:checked)+.cell-select__name::before {
+  opacity: 1;
+}
+
+.cell-select__form:not(:checked)+.cell-select__name::after {
+  opacity: 0;
+}
+
+.cell-select__form:hover+.cell-select__name::before,
+.cell-select__form:focus+.cell-select__name::before {
+  background-color: @bc-grey--hover;
+}
+
+.cell-select__form:active+.cell-select__name::before {
+  background-color: @bc-btn--active;
+}
+
+.cell-select__form:hover+.cell-select__name::after,
+.cell-select__form:focus+.cell-select__name::after {
+  background-color: @bc-btn--hover;
+  border: 15px solid @bc-grey--hover;
+}
+
+.cell-select__form:hover+.cell-select__name--checkbox::after,
+.cell-select__form:focus+.cell-select__name--checkbox::after {
+  background-color: @bc-grey--hover;
+  border: none;
+}
+
+.cell-select__form:active+.cell-select__name::after {
+  background-color: @bc-btn--active;
+  border: 15px solid @bc-grey--active;
+}
+
+.cell-select__form:active+.cell-select__name--checkbox::after {
+  background-color: @bc-grey--hover;
+  border: none;
+}
+
+.cell-select__form:focus-visible+.cell-select__name::before,
+.cell-select__form:focus-visible+.cell-select__name::after,
+.cell-select__form:focus-visible+.cell-select__name--checkbox::before,
+.cell-select__form:focus-visible+.cell-select__name--checkbox::after {
+  .outline-for-cell-select__form;
+}
+
+.cell-select__form+.cell-select__name::before,
+.cell-select__form+.cell-select__name::after,
+.cell-select__form+.cell-select__name--checkbox::before,
+.cell-select__form+.cell-select__name--checkbox::after {
+  cursor: pointer;
+}
+
+@media screen and (min-width: @tablet) {
+  .cell-select {
+    margin-bottom: 22px;
+    &--last {
+      margin-bottom: 0;
+    }
+    &--checkbox {
+      width: ((@tablet)-(@padding-tablet)*4)/2;
+      margin-bottom: 31px;
+    }
+  }
+
+  .cell-select__form {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cell-select__name {
+    margin-left: 20px;
+    &::after {
+      left: -78px;
+      width: 56px;
+      height: 56px;
+      border: 17px solid @bc-grey;
+    }
+    &::before {
+      left: -78px;
+      width: 56px;
+      height: 56px;
+    }
+    &--checkbox {
+      margin-left: 56px;
+    }
+  }
+}
+
+@media screen and (min-width: @desktop) {
+  .cell-select {
+    &--checkbox {
+    width: auto;
+    min-width: 210px;
+    }
+  }
+
+  .cell-select__name {
+    &--checkbox {
+      margin-left: 26px;
+      &::before {
+        left: -82px;
+      }
+      &::after {
+        left: -82px;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.copyright__info {
+  .font-text;
+  margin-right: 10px;
+}
+
+.copyright__link {
+  height: 34px;
+  .outline;
+}
+
+.copyright__icon {
+  display: block;
+  fill: @font-color;
+  &:hover,
+  &:focus {
+    fill: @bc-blue;
+  }
+  &:active {
+    fill: fade(@font-color, 30%);
+  }
+}
