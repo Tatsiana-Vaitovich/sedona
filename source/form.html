@@ -136,6 +136,10 @@
             </label>
           </div>
         </fieldset>
+        <section class="card-form comment__statistic comment__card statistic">
+          <h3 class="card-form__caption card-form__caption--center statistic__caption">Рейтинг посещения достопримечательностей:</h3>
+          <canvas id="mycanvas" class="statistic__graph" width="1200" height="600"></canvas>
+        </section>
         <fieldset class="card-form comment__card">
           <legend class="card-form__caption card-form__caption--textarea card-form__caption--center">Опишите свои эмоции:</legend>
           <label class="cell cell--last">
@@ -148,7 +152,7 @@
             <button type="submit" class="btn">Отправить отзыв</button>
           </div>
           <p class="comment__info">* &#8211; Обязательные поля</p>
-      </div>
+        </div>
       </form>
     </section>
     <footer class="main-footer main-footer--form">
@@ -206,5 +210,6 @@
         </div>
       </div>
     </section>
+    <script type="text/javascript" src="js/canvas.js"></script>
   </body>
 </html>
