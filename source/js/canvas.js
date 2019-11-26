@@ -46,12 +46,12 @@ ctx.fillRect(50, 50, 200, 200);*/
 
 let renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
+  ctx.fillRect(x, y, CLOUD_WIDTH - 10, CLOUD_HEIGHT - 10);
 };
 
 //вызовем функции отрисовки облака и тени
-renderCloud(ctx, 0, 0,"#e5e5e5");
-renderCloud(ctx, -10, 10, "rgba(129, 179, 210, 1)");
+renderCloud(ctx, 10, 0,"#e5e5e5");
+renderCloud(ctx, 0, 10, "rgba(129, 179, 210, 1)");
 
 //отрисуем гистограмму посещаемости достопримечательностей Седоны 
 //для достопримечательности с максимальным количеством посещений:
