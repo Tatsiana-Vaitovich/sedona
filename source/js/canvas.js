@@ -1,17 +1,16 @@
 "use strict";
 
 //получаем доступ к самому тегу <canvas> с помощью метода getElementById
-let canvas = document.getElementById('mycanvas');
+var canvas = document.getElementById("mycanvas");
 //получим объект, который занимается отрисовкой на canvas - контекст отрисовки
 //в данном случае для отрисовки 2-мерной графики
-let ctx = canvas.getContext('2d');
-
+var ctx = canvas.getContext("2d");
 //зададим исходные данные для отрисовки в виде массива 
 let attractions = [
   ["Мост Дьявола", 3000], 
   ["Гора-Колокол", 2000], 
   ["Слайд-парк", 5000], 
-  ["Красные скалы", 1000]
+  ["Красные скалы", 1000],
 ];
 let empty = [];
 
