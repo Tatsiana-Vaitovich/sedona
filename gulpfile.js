@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // gulpfile.js - файл, в котором описано, как пакетам взаимодействовать друг с другом
 // чтобы работала автоматизация
 // require - требовать, вызывать
@@ -23,20 +23,22 @@ var posthtml = require("gulp-posthtml"); // шаблонизатор для то
 var include = require("posthtml-include"); // для вставки в html нужного контента
 var del = require("del"); // плагин для удаления
 var uglify = require("gulp-uglify"); // для минификации js - файлов
+// ---? похоже, task js запускается и с использованием readable-stream
+// и без него
 // var pipeline = require('readable-stream').pipeline;
 
 // task - задание
 // pipe - куда передать контент
 
-//---???? в usage readable-stream:
-// const {
-//   Readable,
-//   Writable,
-//   Transform,
-//   Duplex,
-//   pipeline,
-//   finished 
-// } = require('readable-stream');
+// ---???? в usage readable-stream:
+const {
+  Readable,
+  Writable,
+  Transform,
+  Duplex,
+  pipeline,
+  finished 
+} = require('readable-stream');
 
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
@@ -52,25 +54,25 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-//---??? в соответствии с usage на npm
-// gulp.task("js", function () {
-//   return pipeline( // return - "отдавать" - какие файлы берем
-//         gulp.src("source/js/*.js"),
-//         plumber(),
-//         uglify(),
-//         gulp.dest("build/js") // dest - destake - "раскладывать"
-//         //  - сохраняем измененные файлы
-//   );
-// });
-
-//---??? если написать task как для css
+//---вариант 1 ??? в соответствии с usage на npm
 gulp.task("js", function () {
-  return gulp.src("source/js/*.js") 
-    .pipe(plumber())
-    .pipe(uglify())
-    .pipe(gulp.dest("build/js"))
-    .pipe(server.stream());
+  return pipeline( // return - "отдавать" - какие файлы берем
+        gulp.src("source/js/*.js"),
+        plumber(),
+        uglify(),
+        gulp.dest("build/js") // dest - destake - "раскладывать"
+        //  - сохраняем измененные файлы
+  );
 });
+
+//---вариант 2 ??? если написать task как для css
+// gulp.task("js", function () {
+//   return gulp.src("source/js/*.js") 
+//     .pipe(plumber())
+//     .pipe(uglify())
+//     .pipe(gulp.dest("build/js"))
+//     .pipe(server.stream());
+// });
 
 gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
