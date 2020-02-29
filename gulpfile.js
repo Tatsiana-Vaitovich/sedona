@@ -1,20 +1,42 @@
 "use strict";
-
-var gulp = require("gulp");
-var less = require("gulp-less");
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
+// gulpfile.js - файл, в котором описано, как пакетам взаимодействовать друг с другом
+// чтобы работала автоматизация
+// require - требовать, вызывать
+var gulp = require("gulp"); // менеджер задач для автоматического выполнения 
+// рутинных операций, чтобы пакеты, которые скачиваем, работали вместе
+var less = require("gulp-less"); // пакет для работы препроцессора less
+var plumber = require("gulp-plumber"); // обнаруживает ошибку, при этом 
+// программа не останавливается
+var postcss = require("gulp-postcss"); // в данном случае - чтобы работал 
+// автопрефиксер. позволяет запускать большинство задач, 
+// к-е написаны для ее плагинов
 var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var minify = require("gulp-csso");
+var server = require("browser-sync").create(); // позволяет запустить
+// локально сервер
+var minify = require("gulp-csso"); // позволяет минифицировать css
 var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
-var svgstore = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var del = require("del");
-var uglify = require("gulp-uglify");
+var imagemin = require("gulp-imagemin"); // позволяет минифицировать img
+var webp = require("gulp-webp"); // для создания изображений в формате webp
+var svgstore = require("gulp-svgstore"); // для создания svg-спрайтов
+var posthtml = require("gulp-posthtml"); // шаблонизатор для того, чтобы 
+// инлайнить svg-sprite в шаблоны
+var include = require("posthtml-include"); // для вставки в html нужного контента
+var del = require("del"); // плагин для удаления
+var uglify = require("gulp-uglify"); // для минификации js - файлов
+// var pipeline = require('readable-stream').pipeline;
+
+// task - задание
+// pipe - куда передать контент
+
+//---???? в usage readable-stream:
+// const {
+//   Readable,
+//   Writable,
+//   Transform,
+//   Duplex,
+//   pipeline,
+//   finished 
+// } = require('readable-stream');
 
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
@@ -30,11 +52,25 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-  gulp.task("js", function () {//добавила
-    return gulp.src("source/js/*.js") 
-      .pipe(gulp.dest("build/js"))
-      .pipe(server.stream());
-  });
+//---??? в соответствии с usage на npm
+// gulp.task("js", function () {
+//   return pipeline( // return - "отдавать" - какие файлы берем
+//         gulp.src("source/js/*.js"),
+//         plumber(),
+//         uglify(),
+//         gulp.dest("build/js") // dest - destake - "раскладывать"
+//         //  - сохраняем измененные файлы
+//   );
+// });
+
+//---??? если написать task как для css
+gulp.task("js", function () {
+  return gulp.src("source/js/*.js") 
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(gulp.dest("build/js"))
+    .pipe(server.stream());
+});
 
 gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
@@ -69,12 +105,6 @@ gulp.task("html", function () {
     .pipe(gulp.dest("build"));
 });
 
-gulp.task("js", function () {//добавила
-  return gulp.src("source/js/*.js")
-    //.pipe(uglify())//не работает
-    .pipe(gulp.dest("build/js"))
-    .pipe(server.stream());
-});
 
 gulp.task("copy", function () {
   return gulp.src([
@@ -90,13 +120,14 @@ gulp.task("clean", function () {
   return del("build");
 });
 
+// build - чтобы автоматизировать процесс последовательного запуска taskов
 gulp.task("build", gulp.series(
   "clean",
   "copy",
   "css",
   "sprite",
+  "html",
   "js",//добавила
-  "html"
   ));
 
 gulp.task("server", function () {
@@ -108,6 +139,7 @@ gulp.task("server", function () {
     ui: false
   });
 
+  // gulp.watch - команда, встроенная в gulp. она следит за изменениями файлов
   gulp.watch("source/less/**/*.less", gulp.series("css"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));

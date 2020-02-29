@@ -1,23 +1,26 @@
 "use strict";
 
 //получаем доступ к самому тегу <canvas> с помощью метода getElementById
-let canvas = document.getElementById('mycanvas');
+var canvas = document.getElementById("mycanvas");
+// let canvas = document.getElementById("mycanvas");
 //получим объект, который занимается отрисовкой на canvas - контекст отрисовки
 //в данном случае для отрисовки 2-мерной графики
-let ctx = canvas.getContext('2d');
+var ctx = canvas.getContext("2d");
+// let ctx = canvas.getContext("2d");
 
 //размеры облака запишем в виде констант:
 
-let attractions = [
+var attractions = [
   ["Мост Дьявола", 3000], 
   ["Гора-Колокол", 2000], 
   ["Слайд-парк", 5000], 
   ["Красные скалы", 1000],
 ];
-let empty = [];
+var empty = [];
 
 //размеры облака запишем в виде констант:
-const CLOUD_WIDTH = 1200;
+// const CLOUD_WIDTH = 1200;
+var CLOUD_WIDTH = 1200;
 const CLOUD_HEIGHT = 600;
 const ClOUD_INDENT = CLOUD_WIDTH/40;
 const ClOUD_FONT = "30px sans-serif";
