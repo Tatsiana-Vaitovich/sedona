@@ -1,16 +1,14 @@
 "use strict";
 
 //получаем доступ к самому тегу <canvas> с помощью метода getElementById
-var canvas = document.getElementById("mycanvas");
-// let canvas = document.getElementById("mycanvas");
+let canvas = document.getElementById("mycanvas");
 //получим объект, который занимается отрисовкой на canvas - контекст отрисовки
 //в данном случае для отрисовки 2-мерной графики
-var ctx = canvas.getContext("2d");
-// let ctx = canvas.getContext("2d");
+let ctx = canvas.getContext("2d");
 
 //размеры облака запишем в виде констант:
 
-var attractions = [
+let attractions = [
   ["Мост Дьявола", 3000], 
   ["Гора-Колокол", 2000], 
   ["Слайд-парк", 5000], 
@@ -19,8 +17,7 @@ var attractions = [
 var empty = [];
 
 //размеры облака запишем в виде констант:
-// const CLOUD_WIDTH = 1200;
-var CLOUD_WIDTH = 1200;
+const CLOUD_WIDTH = 1200;
 const CLOUD_HEIGHT = 600;
 const ClOUD_INDENT = CLOUD_WIDTH/40;
 const ClOUD_FONT = "30px sans-serif";
@@ -68,60 +65,56 @@ ctx.fillRect(columnWidth + ClOUD_INDENT*(3+1), ClOUD_INDENT*3, columnWidth, CLOU
 function renderStatistics(arr) {
   //перебираю значения массива и вывожу столбцы для каждого значения:
   for (let i = 0; i < arr.length; i++) {
-    const ARR_NUMBER = arr.length;
-    let arrProperty = arr[i];
+    const arrProperty = arr[i];
     const NAME = arrProperty[0];
+    const X_AXIS_INDENT = calcColumnWidth(arr) * i + ClOUD_INDENT * (i + ARR_INDENT);
     const VALUE = arrProperty[1];
+    const FACTOR_HEIGHT = VALUE / renderMaxValue(arr);
+    const COLUMN_HEIGHT = calcMaxColumnHeight() * FACTOR_HEIGHT;
+  
     ctx.fillStyle = "rgba(255,255,255,1)";
     ctx.font = ClOUD_FONT;
-    ctx.fillText(NAME, calcXAxisIndent(), calcYAxisTextIndent());
-    ctx.fillRect(calcXAxisIndent(), calcYAxisColumnIndent(), calcColumnWidth(), -calcColumnHeight());
-    //функция для нахождения высоты столбца
-    function calcColumnHeight() {
-      const COLUMN_HEIGHT = calcMaxColumnHeight() * calcFactorColumnHeight();
-      return COLUMN_HEIGHT;
-    }
-    //функция для нахождения ширины столбцы
-    function calcColumnWidth() {
-      const COLUMN_WIDTH = calcTotalElementWidth() - calcElementIndent();
-      return COLUMN_WIDTH;
-    }
-    //функция для нахождения общей ширины элемента
-    function calcTotalElementWidth() {
-      const TOTAL_ELEMENT_WIDTH = CLOUD_WIDTH / ARR_NUMBER;
-      return TOTAL_ELEMENT_WIDTH;
-    }
-    //функция для нахождения отступа элемента
-    function calcElementIndent() {
-      const ELEMENT_INDENT = ClOUD_INDENT * ARR_INDENT;
-      return ELEMENT_INDENT;
-    }
-    //определение максимального значения высоты столбца
-    function calcMaxColumnHeight() {
-      const MAX_COLUMN_HEIGHT = CLOUD_HEIGHT - ClOUD_INDENT * 7;
-      return MAX_COLUMN_HEIGHT;
-    }
-    //определение коэффициента высоты столбца
-    function calcFactorColumnHeight() {
-      const FACTOR_HEIGHT = VALUE / renderMaxValue(arr);
-      return FACTOR_HEIGHT;
-    }
-    //определение отступа элемента по оси х
-    function calcXAxisIndent() {
-      const X_AXIS_INDENT = calcColumnWidth() * i + ClOUD_INDENT * (i + ARR_INDENT);
-      return X_AXIS_INDENT;
-    }
-    //определение отступа текста по оси у
-    function calcYAxisTextIndent() {
-      const Y_AXIS_TEXT_INDENT = CLOUD_HEIGHT - ClOUD_INDENT * ARR_INDENT;
-      return Y_AXIS_TEXT_INDENT;
-    }
-    //определение отступа столбца по оси у
-    function calcYAxisColumnIndent() {
-      const Y_AXIS_COLUMN_INDENT = CLOUD_HEIGHT - 1.5 * ClOUD_INDENT * ARR_INDENT;
-      return Y_AXIS_COLUMN_INDENT;
-    }
+    ctx.fillText(NAME, X_AXIS_INDENT, calcYAxisTextIndent());
+    ctx.fillRect(X_AXIS_INDENT, calcYAxisColumnIndent(), calcColumnWidth(arr), - COLUMN_HEIGHT);
   }
+}
+//функция для нахождения ширины столбцы
+function calcColumnWidth(arr) {
+  const COLUMN_WIDTH = calcTotalElementWidth(arr) - calcElementIndent();
+  return COLUMN_WIDTH;
+}
+//функция для нахождения общей ширины элемента
+function calcTotalElementWidth(arr) {
+  const ARR_NUMBER = arr.length;
+  const TOTAL_ELEMENT_WIDTH = CLOUD_WIDTH / ARR_NUMBER;
+  return TOTAL_ELEMENT_WIDTH;
+}
+//функция для нахождения отступа элемента
+function calcElementIndent() {
+  const ELEMENT_INDENT = ClOUD_INDENT * ARR_INDENT;
+  return ELEMENT_INDENT;
+}
+//определение максимального значения высоты столбца
+function calcMaxColumnHeight() {
+  const MAX_COLUMN_HEIGHT = CLOUD_HEIGHT - ClOUD_INDENT * 7;
+  return MAX_COLUMN_HEIGHT;
+}
+//определение коэффициента высоты столбца
+function calcFactorColumnHeight(arr) {
+  let arrProperty = arr[i];
+  const VALUE = arrProperty[1];
+  const FACTOR_HEIGHT = VALUE / renderMaxValue(arr);
+  return FACTOR_HEIGHT;
+}
+//определение отступа текста по оси у
+function calcYAxisTextIndent() {
+  const Y_AXIS_TEXT_INDENT = CLOUD_HEIGHT - ClOUD_INDENT * ARR_INDENT;
+  return Y_AXIS_TEXT_INDENT;
+}
+//определение отступа столбца по оси у
+function calcYAxisColumnIndent() {
+  const Y_AXIS_COLUMN_INDENT = CLOUD_HEIGHT - 1.5 * ClOUD_INDENT * ARR_INDENT;
+  return Y_AXIS_COLUMN_INDENT;
 }
 //поиск максимального значения
 function renderMaxValue(arr) {
