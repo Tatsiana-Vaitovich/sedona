@@ -1,6 +1,9 @@
 .likebtn {
-  width: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
   height: 22px;
+  width: 65px;
   padding: 0;
   border: none;
   background-color: transparent;
@@ -13,9 +16,31 @@
   fill-opacity: 0.3;
 }
 
+.likebtn__counter {
+  .font-text;
+  margin-left: 15px;
+  line-height: initial;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (min-width: @tablet) {
+  .likebtn {
+    min-width: 65px;
+  }
+
+  .likebtn_counter {
+    margin-left: 10px;
+  }
+}
+
 @media screen and (min-width: @desktop) {
   .likebtn__img {
     fill: @font-color-light;
     fill-opacity: 1;
+  }
+
+  .likebtn__counter {
+    color: @font-color-light;
   }
 }
