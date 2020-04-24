@@ -1,5 +1,4 @@
 "use strict";
-
 // "повешу" обработчик на кнопку likebtn
 const photosList = document.querySelector(".photos__list");
 const likebtns = photosList.querySelectorAll(".likebtn");

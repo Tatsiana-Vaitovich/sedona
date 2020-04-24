@@ -43,18 +43,30 @@
   display: block;
   width: 23px;
   height: 21px;
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  cursor: pointer;
+  .outline;
+}
+
+.main-header__btn--open {
   margin-right: 20px;
   margin-left: auto;
   margin-top: 17px;
   margin-bottom: 17px;
   padding: 0;
-  border: none;
   background-image: url(../img/menu.svg);
+  visibility: hidden;
+}
+
+.main-header__btn--close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-image: url("../img/cross.svg");
   background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: contain;
-  cursor: pointer;
-  .outline;
+  z-index: 2;
 }
 
 .main-header__wrap {
