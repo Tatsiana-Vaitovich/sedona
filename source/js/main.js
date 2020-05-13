@@ -5,6 +5,9 @@ const mainNavigation = document.querySelector(".main-header__navigation");
 const mainMenu = document.querySelector(".main-menu");
 const btnMenuOpen = mainNavigation.querySelector(".main-header__btn--open");
 const btnMenuClose = mainNavigation.querySelector(".main-header__btn--close");
+const keyCodeEsc = 27;
+
+document.addEventListener("keydown", onBtnEscPress);
 
 // исключу вариант сценария, когда меню будет закрыто
 // при увеличении ширины окна от mobile до tablet:
@@ -23,17 +26,13 @@ window.addEventListener("resize", () => {
 mainNavigation.addEventListener("click", function(evt) {
   const elem = evt.target;
   if (elem.closest(".main-header__btn--open")) {
-    // showElem(btnMenuClose);
-    changeDisplay(btnMenuClose, "block");
-    showElem(mainMenu);
-    // btnMenuOpen.style.visibility = "hidden";
-    changeDisplay(btnMenuOpen, "none");
+    openMenu();
+
+    document.addEventListener("keydown", onBtnEscPress);
   } else if (elem.closest(".main-header__btn--close")) {
-    // hiddenElem(btnMenuClose);
-    changeDisplay(btnMenuClose, "none");
-    hiddenElem(mainMenu);
-    // btnMenuOpen.style.visibility = "visible";
-    changeDisplay(btnMenuOpen, "block");
+    closeMenu();
+
+    document.removeEventListener("keydown", onBtnEscPress);
   }
 });
 
@@ -47,4 +46,27 @@ function showElem(elem) {
 
 function changeDisplay(elem, param) {
   elem.style.display = param;
+}
+
+function openMenu() {
+  // showElem(btnMenuClose);
+  changeDisplay(btnMenuClose, "block");
+  showElem(mainMenu);
+  // btnMenuOpen.style.visibility = "hidden";
+  changeDisplay(btnMenuOpen, "none");
+}
+
+function closeMenu() {
+  // hiddenElem(btnMenuClose);
+  changeDisplay(btnMenuClose, "none");
+  hiddenElem(mainMenu);
+  // btnMenuOpen.style.visibility = "visible";
+  changeDisplay(btnMenuOpen, "block");
+}
+
+function onBtnEscPress(evt) {
+  if (evt.keyCode === keyCodeEsc) {
+    closeMenu();
+    document.removeEventListener("keydown", onBtnEscPress);
+  }
 }

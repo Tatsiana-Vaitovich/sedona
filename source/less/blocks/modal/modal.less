@@ -1,11 +1,16 @@
-@media screen and (min-width: @tablet) {
-  .modal {
-    width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
-  }
-
-  .modal--success {
-    width: 640px;
-  }
+.modal {
+  position: relative;
+  width: 100%;
+  display: none;
 }
+
+.modal--show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 50;
+  display: block;
+  background-color: fade(@bc-btn--active, 70%);
+}
+
