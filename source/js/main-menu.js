@@ -5,7 +5,6 @@ const mainNavigation = document.querySelector(".main-header__navigation");
 const mainMenu = document.querySelector(".main-menu");
 const btnMenuOpen = mainNavigation.querySelector(".main-header__btn--open");
 const btnMenuClose = mainNavigation.querySelector(".main-header__btn--close");
-const keyCodeEsc = 27;
 
 document.addEventListener("keydown", onBtnEscPress);
 
@@ -13,12 +12,11 @@ document.addEventListener("keydown", onBtnEscPress);
 // при увеличении ширины окна от mobile до tablet:
 window.addEventListener("resize", () => {
   const screenWidth = document.documentElement.scrollWidth;
-  const screenTablet = 768;
-  if (screenWidth >= screenTablet) {
+  if (screenWidth >= window.util.SCREEN_TABLET) {
     showElem(mainMenu);
     changeDisplay(btnMenuOpen, "none");
     changeDisplay(btnMenuClose, "none");
-  } else if (screenWidth <= screenTablet) {
+  } else if (screenWidth <= window.util.SCREEN_TABLET) {
     changeDisplay(btnMenuClose, "block");
   }
 });
@@ -65,7 +63,7 @@ function closeMenu() {
 }
 
 function onBtnEscPress(evt) {
-  if (evt.keyCode === keyCodeEsc) {
+  if (evt.keyCode === window.util.KEY_CODE_ESC) {
     closeMenu();
     document.removeEventListener("keydown", onBtnEscPress);
   }

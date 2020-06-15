@@ -3,11 +3,15 @@
 const photosList = document.querySelector(".photos__list");
 const likebtns = photosList.querySelectorAll(".likebtn");
 
-likebtns.forEach(elem => {
-  const newSpan = createSpan(elem);
-  newSpan.innerHTML = 0;
-  newSpan.className = "likebtn__counter";
-});
+function getCounter() {
+  likebtns.forEach(elem => {
+    const newSpan = createSpan(elem);
+    newSpan.innerHTML = 0;
+    newSpan.className = "likebtn__counter";
+  });
+}
+
+getCounter();
 
 photosList.addEventListener("click", function(evt) {
   console.log(evt);
@@ -21,12 +25,22 @@ photosList.addEventListener("click", function(evt) {
   }
 });
 
-function showElem(elem) {
-  elem.removeAttribute("visually-hidden");
-}
-
 function createSpan(where) {
   const newSpan = document.createElement("span");
   where.append(newSpan);
   return newSpan;
 }
+
+// имеет ли смысл в этом случае для счетчиков использовать замыкание???
+
+// function countLikes() {
+//   let numberLikes = 0;
+//   return function() {
+//     numberLikes++;
+//   };
+// }
+
+// const counter = countLikes(); // объявила блок видимости
+
+// // потом при каждом клике нужно вызывать ф-ю numberLikes():
+// counter();
