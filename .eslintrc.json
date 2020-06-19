@@ -90,6 +90,9 @@
     "linebreak-style": [0],
     "array-bracket-spacing": [2, "never"],
     "space-before-function-paren": [2, "never"],
-    "prefer-const": [2]
+    "prefer-const": [2],
+    "import/extensions": [0],
+    "import/imports-first": [0],
+    "import/newline-after-import": [0]
   }
 }
