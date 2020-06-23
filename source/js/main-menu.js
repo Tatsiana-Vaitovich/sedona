@@ -21,8 +21,8 @@ window.addEventListener("resize", () => {
   }
 });
 
-mainNavigation.addEventListener("click", function(evt) {
-  const elem = evt.target;
+mainNavigation.addEventListener("click", function(clickEvt) {
+  const elem = clickEvt.target;
   if (elem.closest(".main-header__btn--open")) {
     openMenu();
 
@@ -62,9 +62,10 @@ function closeMenu() {
   changeDisplay(btnMenuOpen, "block");
 }
 
-function onBtnEscPress(evt) {
-  if (evt.keyCode === window.util.KEY_CODE_ESC) {
+function onBtnEscPress(keydownEvt) {
+  if (keydownEvt.keyCode === window.util.KEY_CODE_ESC) {
     closeMenu();
+
     document.removeEventListener("keydown", onBtnEscPress);
   }
 }

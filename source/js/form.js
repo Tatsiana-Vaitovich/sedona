@@ -8,29 +8,33 @@
   const noValidElems = [];
 
   // подкорректируем сообщение об ошибке
-  form.addEventListener("click", function(evt) {
-    // evt.preventDefault();
-    console.log(evt);
-    const elem = evt.target;
+  form.addEventListener("click", function(clickEvt) {
+    const number = noValidElems.length;
+    noValidElems.splice(0, number);
+    console.log(noValidElems);
+    const elem = clickEvt.target;
     if (elem.closest(".comment__btn")) {
       arrFormElements.forEach(function(elem) {
         if (!elem.validity.valid) {
           addInvalidStyle(elem);
-          showModalInvalid();
           elem.addEventListener("blur", onElemFormBlur);
           noValidElems.push(elem);
         }
       });
+      console.log(noValidElems);
+      if (noValidElems.length > 0) {
+        showModalInvalid();
+      } else {
+        setTimeout(submitForm, 5000);
+        showModalSucces();
+        // window.util.disableForm(form);
+      }
     }
-    // if (!noValidElems.length) {
-    //   form.addEventListener("submit", showModalSucces);
-    // задержу отправку формы
-    // setTimeout(func, 5000);
-    // }
   });
 
   // event "submit" срабатывает, когда форма отправляется
-  form.addEventListener("submit", showModalSucces);
+  form.addEventListener("submit", submitEvt => submitEvt.preventDefault());
+  // form.addEventListener("submit", showModalSucces);
 
   function showModal(modalName) {
     modalName.classList.add("modal--show");
@@ -44,9 +48,7 @@
   }
 
   function showModalInvalid() {
-    // form.addEventListener("click", function(clickEvt) {
-    //   clickEvt.preventDefault();
-    // });
+    window.util.disableForm(form);
     showModal(modalInvalid);
   }
 
@@ -64,27 +66,48 @@
     }
   }
 
-  document.addEventListener("click", function(evt) {
-    const elem = evt.target;
-    if (elem.closest(".postamble__btn")) {
-      const modalOpen = elem.closest(".modal");
-      closePostamble(modalOpen);
+  document.addEventListener("click", function(clickEvt) {
+    const elem = clickEvt.target;
+    if (elem.closest(".postamble__btn--narrow")) {
+      closeModalInvalid();
+    } else if (elem.closest(".postamble__btn--modal-success")) {
+      closeModalSuccess();
     }
   });
 
-  function closePostamble(elem) {
-    elem.classList.remove("modal--show");
+  function closeModalInvalid() {
+    modalInvalid.classList.remove("modal--show");
+    window.util.enableForm(form);
     noValidElems.shift().focus();
 
     document.removeEventListener("keydown", onBtnEscPress);
   }
 
-  function onBtnEscPress(evt) {
-    if (evt.keyCode === window.util.KEY_CODE_ESC) {
+  function closeModalSuccess() {
+    modalSucces.classList.remove("modal--show");
+    // тут нужно очистить форму
+    window.location.reload();
+
+    document.removeEventListener("keydown", onBtnEscPress);
+  }
+
+  function onBtnEscPress(keydownEvt) {
+    if (keydownEvt.keyCode === window.util.KEY_CODE_ESC) {
       const modalOpen = document.querySelector(".modal--show");
-      closePostamble(modalOpen);
+      if (modalOpen.closest(".modal--invalid")) {
+        closeModalInvalid();
+      } else {
+        closeModalSuccess();
+      }
+
       document.removeEventListener("keydown", onBtnEscPress);
     }
+  }
+
+  function submitForm() {
+    form.setAttribute("action", "http://echo.htmlacademy.ru");
+    form.setAttribute("metod", "POST");
+    form.submit();
   }
 
   // отменю браузерные события на postamble--modal чтобы текст внутри popUp не выделялся при щелчке

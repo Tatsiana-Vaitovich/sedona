@@ -20,8 +20,8 @@ function getCounter() {
 
 getCounter();
 
-photosList.addEventListener("click", function(evt) {
-  const elem = evt.target;
+photosList.addEventListener("click", function(clickEvt) {
+  const elem = clickEvt.target;
   const likebtn = elem.closest(".likebtn");
   if (likebtn) {
     const index = likebtns.findIndex(item => item === likebtn);
