@@ -1,5 +1,7 @@
 "use strict";
 
+// код для работы с формой. Валидация формы. отправка формы
+
 (function() {
   const form = document.querySelector(".comment__form");
   const arrFormElements = Array.from(form.elements);
