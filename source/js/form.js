@@ -25,12 +25,18 @@
       if (noValidElems.length > 0) {
         showModalInvalid();
       } else {
-        setTimeout(submitForm, 5000);
+        setTimeout(submitForm, 4000);
+        setTimeout(reloadForm, 4001);
+        // submitForm();
+        // reloadForm();
         showModalSucces();
-        // window.util.disableForm(form);
       }
     }
   });
+
+  function reloadForm() {
+    window.location.reload();
+  }
 
   // event "submit" срабатывает, когда форма отправляется
   form.addEventListener("submit", submitEvt => submitEvt.preventDefault());
@@ -86,6 +92,7 @@
   function closeModalSuccess() {
     modalSucces.classList.remove("modal--show");
     // тут нужно очистить форму
+    submitForm();
     window.location.reload();
 
     document.removeEventListener("keydown", onBtnEscPress);
@@ -105,8 +112,6 @@
   }
 
   function submitForm() {
-    form.setAttribute("action", "http://echo.htmlacademy.ru");
-    form.setAttribute("metod", "POST");
     form.submit();
   }
 

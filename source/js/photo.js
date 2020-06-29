@@ -3,19 +3,52 @@
 // "повешу" обработчик на кнопку likebtn
 const photosList = document.querySelector(".photos__list");
 const likebtns = Array.from(photosList.querySelectorAll(".likebtn"));
+let objLikeBtnCounters;
 
 function getCounter() {
+  if (localStorage.likeBtnCounters) {
+    objLikeBtnCounters = getObjFromLocalStorage("likeBtnCounters");
+    console.log(objLikeBtnCounters);
+  } else {
+    objLikeBtnCounters = {};
+    const JSONLikeBtnCounters = JSON.stringify(objLikeBtnCounters);
+    window.localStorage.setItem("likeBtnCounters", JSONLikeBtnCounters);
+    console.log(objLikeBtnCounters + "new");
+  }
   likebtns.forEach((elem, item) => {
     const newSpan = createSpan(elem);
     newSpan.className = "likebtn__counter";
     const nameCounter = "sedonaCounter" + item;
-    if (window.localStorage[nameCounter]) {
-      newSpan.innerHTML = window.localStorage.getItem(nameCounter);
+    if (objLikeBtnCounters[nameCounter]) {
+      getLikeBtnCounterInnerHTML(newSpan, objLikeBtnCounters[nameCounter]);
     } else {
-      window.localStorage.setItem(nameCounter, "0");
-      newSpan.innerHTML = window.localStorage.getItem(nameCounter);
+      objLikeBtnCounters[nameCounter] = "0";
+      sendObjToLocalStorage(objLikeBtnCounters);
+      getLikeBtnCounterInnerHTML(newSpan, objLikeBtnCounters[nameCounter]);
     }
   });
+}
+
+function getObjFromLocalStorage(name) {
+  const JSONname = localStorage.getItem(name);
+  const objname = JSON.parse(JSONname);
+  return objname;
+}
+
+function sendObjToLocalStorage(name) {
+  const JSONname = JSON.stringify(name);
+  window.localStorage.setItem("likeBtnCounters", JSONname);
+}
+
+function getLikeBtnCounterInnerHTML(elem, item) {
+  const likeBtnCounterInnerHTML = item;
+  elem.innerHTML = likeBtnCounterInnerHTML;
+}
+
+function createSpan(where) {
+  const newSpan = document.createElement("span");
+  where.append(newSpan);
+  return newSpan;
 }
 
 getCounter();
@@ -27,15 +60,10 @@ photosList.addEventListener("click", function(clickEvt) {
     const index = likebtns.findIndex(item => item === likebtn);
     const newSpan = likebtn.lastElementChild;
     const nameCounter = "sedonaCounter" + index;
-    let counter = Number(window.localStorage.getItem(nameCounter));
+    let counter = objLikeBtnCounters[nameCounter];
     counter++;
     newSpan.innerHTML = counter;
-    window.localStorage.setItem(nameCounter, counter);
+    objLikeBtnCounters[nameCounter] = counter;
+    sendObjToLocalStorage(objLikeBtnCounters);
   }
 });
-
-function createSpan(where) {
-  const newSpan = document.createElement("span");
-  where.append(newSpan);
-  return newSpan;
-}
