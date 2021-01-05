@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Tatsiana-Vaitovich/sedona#readme",
   "devDependencies": {
     "autoprefixer": "9.4.x",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "browser-sync": "2.26.x",
     "del": "^5.1.0",
     "gulp": "4.0.x",
